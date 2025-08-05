@@ -48,6 +48,98 @@
             font-family: 'Tajawal', Arial, sans-serif;
             overflow-x: hidden;
             position: relative;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #0a0a0a 100%);
+            background-size: 400% 400%;
+            animation: galaxyShift 20s ease infinite;
+        }
+
+        @keyframes galaxyShift {
+            0%, 100% { background-position: 0% 50%; }
+            25% { background-position: 100% 0%; }
+            50% { background-position: 100% 100%; }
+            75% { background-position: 0% 100%; }
+        }
+
+        /* Advanced Golden Text Colors */
+        .text-golden {
+            background: linear-gradient(135deg, #FFD700, #FFA500, #FF8C00, #DAA520);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 400% 400%;
+            animation: shimmer-advanced 4s ease infinite;
+        }
+
+        .animate-shimmer {
+            background-size: 400% 400%;
+            animation: shimmer-advanced 3s ease infinite;
+        }
+
+        @keyframes shimmer-advanced {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Neon Glow Effects */
+        .neon-glow {
+            box-shadow: 
+                0 0 20px #FFD700,
+                0 0 40px #FFA500,
+                0 0 60px #FF8C00,
+                inset 0 0 20px rgba(255, 215, 0, 0.2);
+            animation: neonPulse 3s ease infinite;
+        }
+
+        @keyframes neonPulse {
+            0%, 100% { 
+                box-shadow: 
+                    0 0 20px #FFD700,
+                    0 0 40px #FFA500,
+                    0 0 60px #FF8C00,
+                    inset 0 0 20px rgba(255, 215, 0, 0.2);
+            }
+            50% { 
+                box-shadow: 
+                    0 0 30px #FFD700,
+                    0 0 60px #FFA500,
+                    0 0 90px #FF8C00,
+                    inset 0 0 30px rgba(255, 215, 0, 0.4);
+            }
+        }
+
+        /* 3D Transform Effects */
+        .transform-3d {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .rotate-3d {
+            animation: rotate3D 10s ease infinite;
+        }
+
+        @keyframes rotate3D {
+            0% { transform: rotateY(0deg) rotateX(0deg); }
+            25% { transform: rotateY(90deg) rotateX(10deg); }
+            50% { transform: rotateY(180deg) rotateX(0deg); }
+            75% { transform: rotateY(270deg) rotateX(-10deg); }
+            100% { transform: rotateY(360deg) rotateX(0deg); }
+        }
+
+        /* Holographic Effects */
+        .holographic {
+            background: linear-gradient(45deg, 
+                transparent 30%, 
+                rgba(255, 215, 0, 0.3) 50%, 
+                transparent 70%,
+                rgba(255, 165, 0, 0.3) 85%,
+                transparent);
+            background-size: 200% 200%;
+            animation: hologramShift 4s ease infinite;
+        }
+
+        @keyframes hologramShift {
+            0%, 100% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
         }
         
         /* Animated Background */
@@ -218,11 +310,208 @@
 
         /* Advanced Background Effects */
         .gradient-bg {
-            background: linear-gradient(135deg, #EC4899 0%, #F472B6 50%, #8B5CF6 100%);
-            background-size: 400% 400%;
-            animation: gradientShift 10s ease infinite;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 25%, #FF8C00 50%, #DC143C 75%, #8B008B 100%);
+            background-size: 600% 600%;
+            animation: gradientShift 8s ease infinite;
             position: relative;
             overflow: hidden;
+            box-shadow: 
+                inset 0 0 100px rgba(255, 215, 0, 0.3),
+                0 0 100px rgba(255, 140, 0, 0.5);
+        }
+
+        /* Enhanced Galaxy Background */
+        .galaxy-bg {
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 140, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(218, 165, 32, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #0a0a0a 100%);
+            background-size: 400% 400%, 400% 400%, 600% 600%, 400% 400%;
+            animation: galaxyShift 20s ease infinite;
+        }
+
+        /* Cosmic Particle Effects */
+        .cosmic-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .cosmic-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, #FFD700, #FFA500);
+            border-radius: 50%;
+            animation: cosmicFloat 15s infinite linear;
+            box-shadow: 0 0 20px #FFD700, 0 0 40px #FFA500;
+        }
+
+        @keyframes cosmicFloat {
+            0% {
+                transform: translateY(100vh) translateX(0) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) translateX(50px) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        /* Holographic Text Effects */
+        .holographic-text {
+            background: linear-gradient(45deg, #FFD700, #FFA500, #FF6347, #DA70D6, #00CED1, #FFD700);
+            background-size: 600% 600%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: holographicShimmer 4s ease infinite;
+            text-shadow: 
+                0 0 30px rgba(255, 215, 0, 0.8),
+                0 0 60px rgba(255, 165, 0, 0.6),
+                0 0 90px rgba(255, 140, 0, 0.4);
+        }
+
+        @keyframes holographicShimmer {
+            0%, 100% { background-position: 0% 50%; }
+            25% { background-position: 100% 0%; }
+            50% { background-position: 100% 100%; }
+            75% { background-position: 0% 100%; }
+        }
+
+        /* Luxury Golden Effects */
+        .luxury-golden {
+            background: linear-gradient(135deg, 
+                #FFD700 0%, #FFED4E 20%, #FFA500 40%, 
+                #DAA520 60%, #B8860B 80%, #8B7355 100%);
+            background-size: 400% 400%;
+            animation: luxuryShine 6s ease infinite;
+            box-shadow: 
+                0 0 50px rgba(255, 215, 0, 0.7),
+                inset 0 0 30px rgba(255, 215, 0, 0.3);
+        }
+
+        @keyframes luxuryShine {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Premium Glow Borders */
+        .premium-glow {
+            border: 3px solid transparent;
+            background: 
+                linear-gradient(white, white) padding-box,
+                linear-gradient(45deg, #FFD700, #FFA500, #FF6347, #FFD700) border-box;
+            background-size: 400% 400%;
+            animation: premiumGlowShift 5s ease infinite;
+            box-shadow: 
+                0 0 40px rgba(255, 215, 0, 0.6),
+                0 0 80px rgba(255, 165, 0, 0.4),
+                inset 0 0 20px rgba(255, 215, 0, 0.2);
+        }
+
+        @keyframes premiumGlowShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Advanced Button Hover Effects */
+        .super-btn {
+            position: relative;
+            background: linear-gradient(135deg, #FFD700, #FFA500, #FF8C00);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            color: #000;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: 
+                0 10px 30px rgba(255, 215, 0, 0.4),
+                0 0 50px rgba(255, 165, 0, 0.3);
+        }
+
+        .super-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .super-btn:hover::before {
+            left: 100%;
+        }
+
+        .super-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 
+                0 20px 50px rgba(255, 215, 0, 0.6),
+                0 0 100px rgba(255, 165, 0, 0.5);
+        }
+
+        /* Floating Magic Elements */
+        .magic-float {
+            animation: magicFloat 8s ease-in-out infinite;
+        }
+
+        @keyframes magicFloat {
+            0%, 100% { 
+                transform: translateY(0px) rotate(0deg) scale(1); 
+            }
+            25% { 
+                transform: translateY(-20px) rotate(5deg) scale(1.05); 
+            }
+            50% { 
+                transform: translateY(-10px) rotate(-3deg) scale(1.1); 
+            }
+            75% { 
+                transform: translateY(-15px) rotate(2deg) scale(1.05); 
+            }
+        }
+
+        /* Enhanced Product Card Glow */
+        .product-glow {
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .product-glow:hover {
+            transform: translateY(-20px) scale(1.05);
+            box-shadow: 
+                0 30px 80px rgba(255, 215, 0, 0.4),
+                0 0 100px rgba(255, 165, 0, 0.3),
+                inset 0 0 50px rgba(255, 215, 0, 0.1);
+        }
+
+        /* Crystal Effect */
+        .crystal-effect {
+            background: linear-gradient(135deg, 
+                rgba(255, 215, 0, 0.2) 0%,
+                rgba(255, 165, 0, 0.1) 25%,
+                rgba(255, 140, 0, 0.2) 50%,
+                rgba(218, 165, 32, 0.1) 75%,
+                rgba(255, 215, 0, 0.2) 100%);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 
+                0 8px 32px rgba(255, 215, 0, 0.2),
+                inset 0 0 30px rgba(255, 215, 0, 0.1);
         }
 
         @keyframes gradientShift {
@@ -1005,14 +1294,15 @@
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center space-x-4 space-x-reverse">
-                    <i class="fas fa-heart text-2xl text-primary"></i>
-                    <h1 class="text-xl font-bold">متجر الخصوصية</h1>
+                    <i class="fas fa-gem text-2xl text-golden animate-pulse"></i>
+                    <h1 class="text-xl font-bold bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-700 bg-clip-text text-transparent animate-shimmer">💎 إمبراطورية المتعة الفاخرة 💎</h1>
                 </div>
                 
                 <div class="hidden md:flex space-x-6 space-x-reverse">
                     <a href="#" class="nav-link" onclick="showPage('home')">الرئيسية</a>
                     <a href="#" class="nav-link" onclick="showPage('products')">المنتجات</a>
                     <a href="#" class="nav-link" onclick="showPage('tech-vibrators')">الهزاز التكنولوجي</a>
+                    <a href="#" class="nav-link" onclick="showPage('leather-dildos')">قضيب الجلدي</a>
                     <a href="#" class="nav-link" onclick="showPage('shipping')">الشحن</a>
                     <a href="#" class="nav-link" onclick="showPage('contact')">اتصل بنا</a>
                 </div>
@@ -1069,6 +1359,7 @@
                 <a href="#" class="block py-2 nav-link" onclick="showPage('home')">الرئيسية</a>
                 <a href="#" class="block py-2 nav-link" onclick="showPage('products')">المنتجات</a>
                 <a href="#" class="block py-2 nav-link" onclick="showPage('tech-vibrators')">الهزاز التكنولوجي</a>
+                <a href="#" class="block py-2 nav-link" onclick="showPage('leather-dildos')">قضيب الجلدي</a>
                 <a href="#" class="block py-2 nav-link" onclick="showPage('shipping')">الشحن</a>
                 <a href="#" class="block py-2 nav-link" onclick="showPage('contact')">اتصل بنا</a>
             </div>
@@ -1078,9 +1369,9 @@
     <!-- Homepage -->
     <div id="home" class="page active">
         <!-- Hero Section -->
-        <section class="gradient-bg text-white py-20">
+        <section class="gradient-bg text-white py-20 neon-glow holographic transform-3d">
             <div class="container mx-auto px-4 text-center">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">متجر الخصوصية المتطور</h1>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 text-golden animate-shimmer">💎 إمبراطورية المتعة الفاخرة 💎</h1>
                 <p class="text-xl mb-4">🌍 شركة عالمية متخصصة في المنتجات عالية الجودة 🌍</p>
                 <div class="bg-white bg-opacity-20 rounded-lg p-6 mb-6 text-center">
                     <h3 class="text-2xl font-bold mb-3">🏢 شركتنا العالمية 🏢</h3>
@@ -1102,11 +1393,11 @@
                         كميات كبيرة = أسعار خيالية!
                     </div>
                 </div>
-                <button onclick="showPage('products')" class="bg-white text-primary px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors mr-4">
-                    تسوق الآن
+                <button onclick="showPage('products')" class="super-btn luxury-golden mr-4 magic-float">
+                    ✨ تسوق الآن ✨
                 </button>
-                <button onclick="showShareModal()" class="bg-green-500 text-white px-8 py-3 rounded-full font-bold hover:bg-green-600 transition-colors">
-                    شارك واربح نقاط
+                <button onclick="showShareModal()" class="super-btn crystal-effect neon-glow magic-float" style="animation-delay: 0.5s;">
+                    🎁 شارك واربح نقاط 🎁
                 </button>
             </div>
         </section>
@@ -1189,12 +1480,145 @@
             </div>
         </section>
 
-        <!-- All Products -->
+        <!-- Featured Categories Section -->
+        <section class="py-16 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-6">🎁 متجر ألعاب الكبار الأول عربياً 🎁</h2>
+                    <p class="text-xl mb-8">منتجات سكس حصرية • ألعاب جنسية متطورة • هدايا رومانسية فاخرة</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div class="bg-white bg-opacity-20 rounded-xl p-6 text-center backdrop-blur-lg">
+                        <div class="text-4xl mb-4">💕</div>
+                        <h3 class="text-xl font-bold mb-3">هدايا للحبيبة</h3>
+                        <p class="mb-4">اختر أجمل الهدايا الرومانسية لحبيبتك أو زوجتك</p>
+                        <button onclick="showPage('products')" class="bg-pink-500 text-white px-6 py-2 rounded-lg hover:bg-pink-600 transition-colors">
+                            تسوق الهدايا
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white bg-opacity-20 rounded-xl p-6 text-center backdrop-blur-lg">
+                        <div class="text-4xl mb-4">🎮</div>
+                        <h3 class="text-xl font-bold mb-3">ألعاب جنسية</h3>
+                        <p class="mb-4">أحدث الألعاب الجنسية التكنولوجية المتطورة</p>
+                        <button onclick="showPage('tech-vibrators')" class="bg-purple-500 text-white px-6 py-2 rounded-lg hover:bg-purple-600 transition-colors">
+                            استكشف الألعاب
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white bg-opacity-20 rounded-xl p-6 text-center backdrop-blur-lg">
+                        <div class="text-4xl mb-4">📦</div>
+                        <h3 class="text-xl font-bold mb-3">إرسال هدية</h3>
+                        <p class="mb-4">خدمة إرسال الهدايا بتغليف فاخر وسري</p>
+                        <button onclick="showGiftModal()" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors">
+                            أرسل هدية
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button onclick="showPage('products')" class="bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform shadow-2xl">
+                        🛍️ عرض جميع المنتجات
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Categories Showcase -->
+        <section class="py-16 bg-gray-50 dark:bg-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">🔥 أقسام المنتجات الحصرية 🔥</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300">استكشف مجموعتنا الفاخرة من منتجات الكبار عالية الجودة</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white dark:bg-gray-700 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="text-5xl mb-4">💖</div>
+                        <h3 class="text-xl font-bold mb-2">للنساء</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">هزازات متطورة وألعاب خاصة للنساء</p>
+                        <button onclick="filterProducts('women'); showPage('products')" class="w-full bg-pink-500 text-white py-2 rounded-lg hover:bg-pink-600 transition-colors">
+                            تسوق الآن
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-700 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="text-5xl mb-4">👫</div>
+                        <h3 class="text-xl font-bold mb-2">للأزواج</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">منتجات مشتركة لتعزيز العلاقة الزوجية</p>
+                        <button onclick="filterProducts('couples'); showPage('products')" class="w-full bg-purple-500 text-white py-2 rounded-lg hover:bg-purple-600 transition-colors">
+                            استكشف
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-700 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="text-5xl mb-4">💪</div>
+                        <h3 class="text-xl font-bold mb-2">للرجال</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">منتجات تحسين الأداء والمتعة للرجال</p>
+                        <button onclick="filterProducts('men'); showPage('products')" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                            تصفح
+                        </button>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-700 rounded-xl p-6 text-center shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="text-5xl mb-4">🖤</div>
+                        <h3 class="text-xl font-bold mb-2">جلدي واقعي</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">منتجات جلدية واقعية عالية الجودة</p>
+                        <button onclick="showPage('leather-dildos')" class="w-full bg-gray-800 text-white py-2 rounded-lg hover:bg-gray-900 transition-colors">
+                            اكتشف
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Offers Section -->
+        <section class="py-16 bg-gradient-to-r from-red-500 to-pink-600 text-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold mb-6">🎉 عروض حصرية للكبار 🎉</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                        <div class="bg-white bg-opacity-20 rounded-xl p-6 backdrop-blur-lg">
+                            <h3 class="text-2xl font-bold mb-3">🛒 منتجات سكس</h3>
+                            <p class="mb-4">مجموعة شاملة من أفضل منتجات الكبار المتاحة</p>
+                            <div class="text-3xl font-bold text-yellow-300">خصومات تصل 50%</div>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-20 rounded-xl p-6 backdrop-blur-lg">
+                            <h3 class="text-2xl font-bold mb-3">🎁 هدايا رومانسية</h3>
+                            <p class="mb-4">هدايا خاصة للمناسبات والذكريات الرومانسية</p>
+                            <div class="text-3xl font-bold text-yellow-300">تغليف مجاني</div>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-20 rounded-xl p-6 backdrop-blur-lg">
+                            <h3 class="text-2xl font-bold mb-3">🚚 توصيل سري</h3>
+                            <p class="mb-4">خدمة توصيل سرية وآمنة لجميع أنحاء المنطقة</p>
+                            <div class="text-3xl font-bold text-yellow-300">خلال ساعات</div>
+                        </div>
+                    </div>
+                    
+                    <button onclick="showPage('products')" class="bg-yellow-400 text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-500 transition-colors shadow-2xl">
+                        🛍️ تسوق العروض الحصرية
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest Products Preview -->
         <section class="py-16">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-12">جميع المنتجات</h2>
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold mb-4">✨ أحدث المنتجات ✨</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300">اكتشف أحدث وأفضل منتجات ألعاب الكبار</p>
+                </div>
                 <div id="home-products-grid" class="product-grid">
                     <!-- Products will be generated by JavaScript -->
+                </div>
+                <div class="text-center mt-12">
+                    <button onclick="showPage('products')" class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-purple-700 transition-colors shadow-lg">
+                        عرض جميع المنتجات ← 
+                    </button>
                 </div>
             </div>
         </section>
@@ -1360,6 +1784,29 @@
 
                 <div id="tech-vibrators-grid" class="product-grid">
                     <!-- Tech vibrator products will be generated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Leather Dildos Page -->
+    <div id="leather-dildos" class="page">
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <!-- Hero Section for Leather Dildos -->
+                <div class="text-center mb-16 bg-gradient-to-r from-gray-800 to-black text-white py-16 rounded-3xl">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 shimmer-text">🖤 قضيب الجلدي الواقعي 🖤</h1>
+                    <p class="text-xl mb-4">أجود أنواع الأقضيب الجلدية الواقعية عالية الجودة</p>
+                    <div class="bg-white bg-opacity-20 rounded-lg p-6 mb-6 text-center max-w-4xl mx-auto">
+                        <h3 class="text-2xl font-bold mb-3">🏴 ملمس جلدي فاخر وواقعي 🏴</h3>
+                        <p class="text-lg mb-2">منتجات مصنوعة من أجود المواد الجلدية بملمس واقعي 100%</p>
+                        <p class="text-lg mb-2">💎 <strong>مميزات خاصة:</strong> ملمس بشرة طبيعي، أحجام متنوعة، مقاومة للماء، سهولة التنظيف</p>
+                        <p class="text-lg font-bold text-yellow-300">🔥 تجربة واقعية لا تُنسى مع أفضل جودة في السوق! 🔥</p>
+                    </div>
+                </div>
+
+                <div id="leather-dildos-grid" class="product-grid">
+                    <!-- Leather dildo products will be generated by JavaScript -->
                 </div>
             </div>
         </section>
@@ -1579,6 +2026,8 @@
                 generateHomeProducts();
             } else if (pageId === 'tech-vibrators') {
                 generateTechVibrators();
+            } else if (pageId === 'leather-dildos') {
+                generateLeatherDildos();
             }
             
             // Close mobile menu
@@ -1831,22 +2280,8 @@
             shareWebsite();
         }
 
-        // Products data - جميع المنتجات
+        // Products data - جميع المنتجات (الصور المحدثة والمنظفة)
         const products = [
-            { 
-                id: 1, 
-                name: '10 سم غمد القضيب الأسود المطور', 
-                category: 'men', 
-                price: 65, 
-                originalPrice: 120, 
-                images: ['https://via.placeholder.com/400x400/EC4899/FFFFFF?text=منتج+متوفر'],
-                gradient: 'from-gray-800 to-black', 
-                discount: 46,
-                description: 'غلاف القضيب مصنوع من السيليكون الصحي من الدرجة الأولى. إنه أسود شفاف اللون. ميزة السطح الحبيبي الخاصة التي تساعد على زيادة المتعة.',
-                features: ['سيليكون طبي آمن', 'سطح حبيبي مميز', 'حلقة مانعة للانزلاق', 'قابل للاستخدام المتكرر'],
-                rating: 4.8,
-                reviews: 324
-            },
             { 
                 id: 2, 
                 name: '12.5 سم أرنب تحفيز البظر تهتز كم القضيب الشفاف', 
@@ -1854,9 +2289,7 @@
                 price: 195, 
                 originalPrice: 320, 
                 images: [
-                    'https://pfst.cf2.poecdn.net/base/image/451830208e56a601baa5cac863c2370c70ee5e12704ddf546865d110465816a4?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/aaed2379f7e23e075ca9bc9f610b2e86770cdb19a9f6186fc926548a7977b67c?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/7e6c8488a219ea106313be285dc43481490e706a3b62c5c6cfc3536ceb76a28c?w=800&h=800'
+                    'https://pfst.cf2.poecdn.net/base/image/451830208e56a601baa5cac863c2370c70ee5e12704ddf546865d110465816a4?w=800&h=800'
                 ],
                 gradient: 'from-pink-400 to-purple-500', 
                 discount: 39,
@@ -1872,9 +2305,7 @@
                 price: 245, 
                 originalPrice: 420, 
                 images: [
-                    'https://pfst.cf2.poecdn.net/base/image/65cfa6d99905502f17f84fc58231af66ad66a1358c2120881bdf864a128d66a5?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/4862c5b8a7886bffd1a63762d679628b65ae155d079bbdaf73c7ec2a997537c8?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/b094ae03b73c2342a8bcb05e29642948693b4e7fdd6aaa4accb42ac5d7307902?w=800&h=800'
+                    'https://pfst.cf2.poecdn.net/base/image/65cfa6d99905502f17f84fc58231af66ad66a1358c2120881bdf864a128d66a5?w=800&h=800'
                 ],
                 gradient: 'from-orange-400 to-red-500', 
                 discount: 42,
@@ -1904,8 +2335,7 @@
                 price: 115, 
                 originalPrice: 195, 
                 images: [
-                    'https://pfst.cf2.poecdn.net/base/image/0d3ba842fae30649c874181547e87ac1a17a9e13745426e65fe2db617cbb99e4?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/799bfc748d284d0bfc94210b1bba70f9cd8408cf0b3d7f50f14d85d8271e6924?w=800&h=800'
+                    'https://pfst.cf2.poecdn.net/base/image/0d3ba842fae30649c874181547e87ac1a17a9e13745426e65fe2db617cbb99e4?w=800&h=800'
                 ],
                 gradient: 'from-orange-400 to-pink-500', 
                 discount: 41,
@@ -1935,8 +2365,7 @@
                 price: 320, 
                 originalPrice: 550, 
                 images: [
-                    'https://pfst.cf2.poecdn.net/base/image/a5a1176a02c876d0e868b82b3b53ac08aa48fd4382c4421852d5c50ed32c1de2?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/390558993310be8d461aa73a0b877ca626afecc8b0b6a3d70083e29dbbdeda9f?w=800&h=800'
+                    'https://pfst.cf2.poecdn.net/base/image/a5a1176a02c876d0e868b82b3b53ac08aa48fd4382c4421852d5c50ed32c1de2?w=800&h=800'
                 ],
                 gradient: 'from-purple-500 to-pink-600', 
                 discount: 42,
@@ -1980,8 +2409,7 @@
                 price: 145, 
                 originalPrice: 250, 
                 images: [
-                    'https://pfst.cf2.poecdn.net/base/image/edf944c97868162fabfd8729afd3e952090dd2f8c13b6bebb36b282cc8860e0b?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/4dcd7f5b0d202015bb345c2ce7263c447cb44f8eb30db21c69f35b42f7cb1f73?w=800&h=800'
+                    'https://pfst.cf2.poecdn.net/base/image/edf944c97868162fabfd8729afd3e952090dd2f8c13b6bebb36b282cc8860e0b?w=800&h=800'
                 ],
                 gradient: 'from-gray-800 to-black', 
                 discount: 42,
@@ -2011,8 +2439,7 @@
                 price: 245, 
                 originalPrice: 425, 
                 images: [
-                    'https://pfst.cf2.poecdn.net/base/image/9202d80645118cc7b93ece2540ed9e68fab8101336064868a20add8596b20a01?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/698ad5e80bb64f3a9609a1d7b8e982c84de49f844b1c95b7c33e2214e1f20614?w=800&h=800'
+                    'https://pfst.cf2.poecdn.net/base/image/9202d80645118cc7b93ece2540ed9e68fab8101336064868a20add8596b20a01?w=800&h=800'
                 ],
                 gradient: 'from-pink-400 to-orange-500', 
                 discount: 42,
@@ -2028,8 +2455,7 @@
                 price: 325, 
                 originalPrice: 550, 
                 images: [
-                    'https://pfst.cf2.poecdn.net/base/image/449d4b1ddbc6661e2b55152d3822bb75a0436b3bb67b175baf907f264b2fbefe?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/907e0da9b7d4184acf3ac7db4f7428923b90df3c2fb34db50e9cad5a2d54a039?w=800&h=800'
+                    'https://pfst.cf2.poecdn.net/base/image/449d4b1ddbc6661e2b55152d3822bb75a0436b3bb67b175baf907f264b2fbefe?w=800&h=800'
                 ],
                 gradient: 'from-purple-400 to-pink-500', 
                 discount: 41,
@@ -2045,8 +2471,7 @@
                 price: 850, 
                 originalPrice: 1450, 
                 images: [
-                    'https://pfst.cf2.poecdn.net/base/image/6a908886a990294056a29f3381bf862a95d06e9808fd64828d5236d23ef99c54?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/13bc58815dba93b7cd6916ebf8e05f14628a067f6135806c7fc7ddd14fe39c2c?w=800&h=800'
+                    'https://pfst.cf2.poecdn.net/base/image/6a908886a990294056a29f3381bf862a95d06e9808fd64828d5236d23ef99c54?w=800&h=800'
                 ],
                 gradient: 'from-red-500 to-pink-600', 
                 discount: 41,
@@ -2062,8 +2487,7 @@
                 price: 135, 
                 originalPrice: 235, 
                 images: [
-                    'https://pfst.cf2.poecdn.net/base/image/07bd1c67d1840c6758512ec18724cbb5b23119feff2748a59febda0142c006ec?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/1ca692af18e7225ada24429413102269c4ce2007279c66b151f2173505b6c3f5?w=800&h=800'
+                    'https://pfst.cf2.poecdn.net/base/image/07bd1c67d1840c6758512ec18724cbb5b23119feff2748a59febda0142c006ec?w=800&h=800'
                 ],
                 gradient: 'from-purple-500 to-pink-500', 
                 discount: 43,
@@ -2079,8 +2503,7 @@
                 price: 185, 
                 originalPrice: 325, 
                 images: [
-                    'https://pfst.cf2.poecdn.net/base/image/e7a309f2c4e72730b7f4571b2b01abb3f3f5542c1591f218859fcca1f241e55d?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/12bb0d2db58c4fc31bdec6f826c850387fba15009633a7d8c907ad91982e3864?w=800&h=800'
+                    'https://pfst.cf2.poecdn.net/base/image/e7a309f2c4e72730b7f4571b2b01abb3f3f5542c1591f218859fcca1f241e55d?w=800&h=800'
                 ],
                 gradient: 'from-gray-800 to-purple-600', 
                 discount: 43,
@@ -2112,8 +2535,7 @@
                 price: 225, 
                 originalPrice: 385, 
                 images: [
-                    'https://pfst.cf2.poecdn.net/base/image/8e85bfae08ca864d75d3b15fb70129856095a4d83d6cdf5928089a7997a59d11?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/c2d4ee7ce99e59f8ff1184db5469bb894c54e779d779e255b337d99a536f55ab?w=800&h=800'
+                    'https://pfst.cf2.poecdn.net/base/image/8e85bfae08ca864d75d3b15fb70129856095a4d83d6cdf5928089a7997a59d11?w=800&h=800'
                 ],
                 gradient: 'from-purple-600 to-pink-500', 
                 discount: 42,
@@ -2129,8 +2551,7 @@
                 price: 275, 
                 originalPrice: 475, 
                 images: [
-                    'https://pfst.cf2.poecdn.net/base/image/bde5bb9c809cace6537902384e07134667d034cf3b50e3f93f39cc37bb2a194f?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/f7511690c43b040283b58f0c4018504ab5ca5b1a2e9cab1761608e15d3c971e3?w=800&h=800'
+                    'https://pfst.cf2.poecdn.net/base/image/bde5bb9c809cace6537902384e07134667d034cf3b50e3f93f39cc37bb2a194f?w=800&h=800'
                 ],
                 gradient: 'from-purple-600 to-pink-500', 
                 discount: 42,
@@ -2162,8 +2583,7 @@
                 price: 295, 
                 originalPrice: 525, 
                 images: [
-                    'https://pfst.cf2.poecdn.net/base/image/d3a9f159a74dcda2c5cdbe8cf847b82cc441dad55f465da2a15b5001194146c9?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/32d71528b49661d8e15c669e731f49d456ddd9a4ccc5f81f680ecd6e446c3ee1?w=800&h=800'
+                    'https://pfst.cf2.poecdn.net/base/image/d3a9f159a74dcda2c5cdbe8cf847b82cc441dad55f465da2a15b5001194146c9?w=800&h=800'
                 ],
                 gradient: 'from-purple-600 to-pink-500', 
                 discount: 44,
@@ -2179,8 +2599,7 @@
                 price: 155, 
                 originalPrice: 275, 
                 images: [
-                    'https://pfst.cf2.poecdn.net/base/image/3abc9fd261e286cf92ae324cebba258f22114c798f63525cdf3ed4c10de8eed6?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/96b6d1714cb037c699c1b2c5b0b557967917611ae25a8611027598fa53470d1d?w=800&h=800'
+                    'https://pfst.cf2.poecdn.net/base/image/3abc9fd261e286cf92ae324cebba258f22114c798f63525cdf3ed4c10de8eed6?w=800&h=800'
                 ],
                 gradient: 'from-pink-400 to-orange-500', 
                 discount: 44,
@@ -2196,8 +2615,7 @@
                 price: 185, 
                 originalPrice: 325, 
                 images: [
-                    'https://pfst.cf2.poecdn.net/base/image/746f246305c884c76c656c1d0fee427eedbe01f8c7039b98c84cada8c15eb7c6?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/3f3027e85a405f2388f8edd3abcba7ee5ca0751b15fde8734981d84180c44801?w=800&h=800'
+                    'https://pfst.cf2.poecdn.net/base/image/746f246305c884c76c656c1d0fee427eedbe01f8c7039b98c84cada8c15eb7c6?w=800&h=800'
                 ],
                 gradient: 'from-pink-500 to-orange-400', 
                 discount: 43,
@@ -2213,8 +2631,7 @@
                 price: 165, 
                 originalPrice: 285, 
                 images: [
-                    'https://pfst.cf2.poecdn.net/base/image/391aa3dc0d42eaee1025c66e720558dcb7f7a69fd62b88458d3ddcdad596fa28?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/f302871f22cc1ceb8c8ac414bb0582cadcdc83013da6c5432424916934965ed2?w=800&h=800'
+                    'https://pfst.cf2.poecdn.net/base/image/391aa3dc0d42eaee1025c66e720558dcb7f7a69fd62b88458d3ddcdad596fa28?w=800&h=800'
                 ],
                 gradient: 'from-gray-900 to-black', 
                 discount: 42,
@@ -2230,8 +2647,7 @@
                 price: 195, 
                 originalPrice: 335, 
                 images: [
-                    'https://pfst.cf2.poecdn.net/base/image/69cef4e56b191a4b80939ccd62e21e4b0be46a475d21de3a1229b3da95d1295d?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/49ada6782dad90b3750ffcc9a7ae1062b22e900a166bcd058336f71b68ece2c9?w=800&h=800'
+                    'https://pfst.cf2.poecdn.net/base/image/69cef4e56b191a4b80939ccd62e21e4b0be46a475d21de3a1229b3da95d1295d?w=800&h=800'
                 ],
                 gradient: 'from-pink-400 to-orange-500', 
                 discount: 42,
@@ -2261,8 +2677,7 @@
                 price: 385, 
                 originalPrice: 650, 
                 images: [
-                    'https://pfst.cf2.poecdn.net/base/image/a76e971a8c912671dd5667fdd94828dfff32338b8bd52126ce2273ce68e8a935?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/32c2c2ad352e6ace61aa80948e35b98d75bf68249a2bdaf81514fbc5cc327e89?w=800&h=800'
+                    'https://pfst.cf2.poecdn.net/base/image/a76e971a8c912671dd5667fdd94828dfff32338b8bd52126ce2273ce68e8a935?w=800&h=800'
                 ],
                 gradient: 'from-pink-500 to-purple-600', 
                 discount: 41,
@@ -2278,8 +2693,7 @@
                 price: 750, 
                 originalPrice: 1250, 
                 images: [
-                    'https://pfst.cf2.poecdn.net/base/image/47428d163a8878c013cee0a7e43365023fc4a64fb449752d4fff8e10563665d5?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/f1c5e795423d5d91afd8ab6003405f0cfa77c4c70ebc8c5cfe1a1818958fa2b5?w=800&h=800'
+                    'https://pfst.cf2.poecdn.net/base/image/47428d163a8878c013cee0a7e43365023fc4a64fb449752d4fff8e10563665d5?w=800&h=800'
                 ],
                 gradient: 'from-orange-500 to-red-600', 
                 discount: 40,
@@ -2295,8 +2709,7 @@
                 price: 215, 
                 originalPrice: 375, 
                 images: [
-                    'https://pfst.cf2.poecdn.net/base/image/3b00bf43a3e16851617f268de2193fb9137ae210675660ffa8b252ef78d070d9?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/26f8bd57c5557abbcfb29614875a677a7da6f135bd724ed7fa903b2b6cf9d6a3?w=800&h=800'
+                    'https://pfst.cf2.poecdn.net/base/image/3b00bf43a3e16851617f268de2193fb9137ae210675660ffa8b252ef78d070d9?w=800&h=800'
                 ],
                 gradient: 'from-pink-500 to-purple-600', 
                 discount: 43,
@@ -2326,8 +2739,7 @@
                 price: 395, 
                 originalPrice: 675, 
                 images: [
-                    'https://pfst.cf2.poecdn.net/base/image/30685de4288dee2819782d3a072306497ad3fe350cc0c38c00ea90b3f4771d75?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/2a4fbe83fbe64e16ec7a184465a7881fa5a5e9223a83fc6c4bd7e65993a2e79a?w=800&h=800'
+                    'https://pfst.cf2.poecdn.net/base/image/30685de4288dee2819782d3a072306497ad3fe350cc0c38c00ea90b3f4771d75?w=800&h=800'
                 ],
                 gradient: 'from-blue-600 to-purple-600', 
                 discount: 41,
@@ -2343,10 +2755,7 @@
                 price: 285, 
                 originalPrice: 485, 
                 images: [
-                    'https://pfst.cf2.poecdn.net/base/image/05bca378dd8343cd25dcfe5247b6160a2e01f7b5cd22a9843e6ce8867b05feb5?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/00bf3291a938981e9b2aa29890270580ca6cdc6212f1af2fa03f0695c0225369?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/4df03743f31078d60966273a9505e0c9228d3bb936aa0c7a5e5d898abbf67c12?w=800&h=800',
-                    'https://pfst.cf2.poecdn.net/base/image/10baeacab8d83aaacc1e5aa97e77627d0d4527b55b4f7e622149bb2110493e6b?w=800&h=800'
+                    'https://pfst.cf2.poecdn.net/base/image/05bca378dd8343cd25dcfe5247b6160a2e01f7b5cd22a9843e6ce8867b05feb5?w=800&h=800'
                 ],
                 gradient: 'from-purple-600 to-pink-500', 
                 discount: 41,
@@ -2354,6 +2763,178 @@
                 features: ['طول كامل 19.5 سم', 'طول قابل للاستخدام 10.5 سم', 'قطر 3 سم', 'رأس منقط متحرك', 'نقاط اهتزاز منفصلة', '12 وظيفة اهتزاز', '12 وظيفة تدوير', 'شحن USB', '100% سيليكون طبي', 'مقاوم للماء', 'مرن ومطاطي', '3 محركات منفصلة'],
                 rating: 4.9,
                 reviews: 378
+            },
+            { 
+                id: 33, 
+                name: 'هزاز سيليكون لوكس بنفسجي ناعم', 
+                category: 'women', 
+                price: 225, 
+                originalPrice: 385, 
+                images: [
+                    'https://pfst.cf2.poecdn.net/base/image/281813fe4e030134e827745145cfc9b5b1f5bd2ba8f9645ebf0fa3247b0415fb?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/f9ad9898f7a612372fc96bd6c2b0e28d7e24ba96b269149fb2f2be74f74e402a?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/490135668ba043c89971360d33ebe2e4c4ad07c32e7bf90407101102dca9becc?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/b34b6067711892783592988f8d72307fdd758aed01e6ffe295447a22695e1060?w=800&h=800'
+                ],
+                gradient: 'from-purple-500 to-pink-600', 
+                discount: 42,
+                description: 'هزاز سيليكون لوكس بنفسجي ناعم، تهتز، تعمل على بطاريتين. سطح مخملي ناعم لتجربة مثالية ومريحة.',
+                features: ['سيليكون لوكس فاخر', 'سطح مخملي ناعم', 'يعمل على بطاريتين', 'اهتزازات متعددة', 'لون بنفسجي أنيق', 'تصميم مريح', 'سهل الاستخدام', 'آمن 100%'],
+                rating: 4.8,
+                reviews: 456,
+                isTech: true
+            },
+            { 
+                id: 34, 
+                name: 'هزاز متقدم مقاس 28 سم مزود بمنفذ USB مع 38 اهتزازًا مختلفًا', 
+                category: 'women', 
+                price: 395, 
+                originalPrice: 675, 
+                images: [
+                    'https://pfst.cf2.poecdn.net/base/image/47618392eb5add745a7cdd8c8a75c7d4cbc75b1ecfc30d099345268c8869c64d?w=800&h=450'
+                ],
+                gradient: 'from-pink-600 to-purple-700', 
+                discount: 41,
+                description: 'الجيل القادم سوبر هزاز. جسم سيليكون فائق النعومة يشعر بالملمس المخملي. مصنوعة من مواد صديقة للبشرة. لديه 38 وضع اهتزاز مختلف مع 9 ميزات مختلفة للأمام والخلف. ساخنة. يمكن شحنها عن طريق USB. إنه في علبة هدايا عالية الجودة.',
+                features: ['38 وضع اهتزاز مختلف', '9 ميزات للأمام والخلف', 'خاصية التسخين', 'شحن USB', 'الطول 28 سم', 'طول قابل للاستخدام 15.5 سم', 'القطر 4 سم', 'علبة هدايا فاخرة', 'سيليكون فائق النعومة', 'مواد صديقة للبشرة'],
+                rating: 4.9,
+                reviews: 623,
+                isTech: true
+            },
+            { 
+                id: 35, 
+                name: '15 سم قضيب واقعي يهتز 360 درجة رأس دوار هزاز قضيب هزاز', 
+                category: 'women', 
+                price: 275, 
+                originalPrice: 465, 
+                images: [
+                    'https://pfst.cf2.poecdn.net/base/image/20c9433d23bd2f1c8cc7ea9f30cb0fb3a01b7043ac00ee344f3815d94e9a889a?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/588575fd73289c9aa6e574ddf5ec1bbb61851d99f8ac0b3cca3f27806584a4d7?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/7569da5022dd847ef4a45ef0789b27767a4e017b71bfd523e617317513f9039e?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/e5bf7c7c4270aad96ac42030d61b08caed33b431b78fad2309b24437fa3429e1?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/7ecfb4ac00eac9ea2d295610e8122bbfdf7b0a881148f11d5be2d3ad9989a0d1?w=247&h=247'
+                ],
+                gradient: 'from-orange-500 to-pink-600', 
+                discount: 41,
+                description: '15 سم قضيب واقعي يهتز 360 درجة رأس دوار هزاز قضيب هزاز. جاهز لجذب الأنظار برأسه المتحرك بزاوية 360 درجة وسرعة الاهتزاز القابلة للتعديل! تم إنتاجه من مادة واقعية بشكل لا يصدق. 100٪ لينة عالية الجودة، سطح ناعم وحريري، تصل إلى درجة حرارة الجسم أثناء الاستخدام.',
+                features: ['رأس دوار 360 درجة', 'سرعة اهتزاز قابلة للتعديل', 'الطول 15 سم', 'السماكة 3.5 سم', 'ملمس بشرة واقعي', 'لاصقة قوية للتثبيت', 'مادة صديقة للبشرة', 'خالية من الفثالات', 'يأتي مع حزام ربط', 'زيوت تشحيم مجانية'],
+                rating: 4.8,
+                reviews: 543,
+                isTech: true
+            },
+            { 
+                id: 36, 
+                name: '13 سنتيمتر قضيب جلدي واقعية دسار مجموعة القضيب الأسود', 
+                category: 'leather', 
+                price: 185, 
+                originalPrice: 315, 
+                images: [
+                    'https://pfst.cf2.poecdn.net/base/image/c084bc1d93d063b91137a4424ad1fe2b76d3bd811cb91f5852d5eafe34998fc5?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/550d8983cc1bcc69f8a3978de55e49e108a917bd9df7d3da5257feb00269d17f?w=247&h=247'
+                ],
+                gradient: 'from-gray-800 to-black', 
+                discount: 41,
+                description: '13 سنتيمتر قضيب جلدي واقعية دسار مجموعة القضيب الأسود. القضيب الأسود فينسي ملمس اللحم سوبر واقعية. مجموعة فقط من أجلك مع حزام ربط القضيب وزيوت التشحيم.',
+                features: ['ملمس اللحم سوبر واقعي', 'الطول 13 سم', 'طول قابل للاستخدام 11.5 سم', 'سمك 3 سم', 'ملمس بشرة واقعي', 'لاصقة قوية للتثبيت', 'مادة صديقة للبشرة', 'سهلة التنظيف', 'بنية القضيب المتوسطة', 'خالية من الفثالات', 'حزام ربط مجاني', 'زيوت تشحيم مجانية'],
+                rating: 4.7,
+                reviews: 398,
+                isLeather: true
+            },
+            { 
+                id: 37, 
+                name: '16.5 سنتيمتر قضيب جلدي قابل للنفخ القضيب', 
+                category: 'leather', 
+                price: 225, 
+                originalPrice: 385, 
+                images: [
+                    'https://pfst.cf2.poecdn.net/base/image/6bb12cbd18dba5669866525b8735a213306ef7c25117dd87b932c86bb693d95e?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/6aff66addb2a9ff64e022b75b5b49d50917f3f69a66619054e5a396b53bbfe6e?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/e4042688d12561475d865576181e861a3005e9e812cca44590e2e56a43e67821?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/b4b6dd04a82f06c97bbe799257fd118747562f84c10c9c6bff5808843b103b5a?w=800&h=800'
+                ],
+                gradient: 'from-pink-400 to-orange-500', 
+                discount: 42,
+                description: '16.5 سنتيمتر قضيب جلدي قابل للنفخ القضيب. مناسب للاستخدام الجنسي المهبلي والشرجي. له ملمس بشرة واقعي. لديها ميزة نفخ قابلة للتعديل على مستويات مختلفة. بنية خصية معرق وواقعية.',
+                features: ['مناسب للاستخدام المهبلي والشرجي', 'ملمس بشرة واقعي', 'نفخ قابل للتعديل', 'لون البشرة الطبيعي', 'بنية خصية معرق وواقعية', 'حزام ربط الخصر قابل للتعديل', 'سهل التنظيف', 'مواد صديقة للبشرة', 'الطول 16.5 سم', 'السماكة 3.5 سم', 'الوزن 281 جرام', 'يُنصح باستخدام مواد التشحيم'],
+                rating: 4.8,
+                reviews: 467,
+                isLeather: true
+            },
+            { 
+                id: 38, 
+                name: 'بينك ريدرز القضيب الاصطناعي الخصية - 16.5 سم مع حزام قابل للتعديل', 
+                category: 'couples', 
+                price: 165, 
+                originalPrice: 285, 
+                images: [
+                    'https://pfst.cf2.poecdn.net/base/image/c8ded015de0b80ebfad152972b489c6d8ce58d86791735630895dc15f1cd692e?w=800&h=800'
+                ],
+                gradient: 'from-pink-500 to-purple-600', 
+                discount: 42,
+                description: '6.5 بوصة (16.5 سم) طويلة، نسيج لحم أصلي Loveclone، حزام قابل للتعديل، سطح أملس، مقاوم للماء، قضيب اصطناعي مربوط بالخصر مع 3 خيارات اهتزاز مختلفة. من علامة Pink Riderz الشهيرة.',
+                features: ['طول 16.5 سم (6.5 بوصة)', 'نسيج لحم أصلي Loveclone', 'حزام قابل للتعديل', 'سطح أملس مقاوم للماء', '3 خيارات اهتزاز مختلفة', 'علامة Pink Riderz', 'مناسب للأزواج', 'مادة آمنة ومرنة', 'تصميم واقعي', 'سهل الاستخدام'],
+                rating: 4.7,
+                reviews: 356,
+                isTech: true
+            },
+            { 
+                id: 39, 
+                name: 'حزام قضيب احترافي للأزواج مع ملحقات متكاملة وتحكم بالاهتزاز', 
+                category: 'couples', 
+                price: 195, 
+                originalPrice: 335, 
+                images: [
+                    'https://pfst.cf2.poecdn.net/base/image/651c3a7d56e560495d954531e74676341e6160a95e9c3d94f375cfebee1dfb06?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/f4ff08d5e40046cc6cf2e9b683dc26df60546ed54529396f2b5e8591ee2dd1d7?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/d5c9ce170b5a0806f53d9598c0840fa45013ef29cf6e23f7782899c1975366b8?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/aa9b61a2df738d8456c5dc2e53cf72a89341588fc24e96a5eb89832853a786c7?w=768&h=768'
+                ],
+                gradient: 'from-orange-500 to-red-600', 
+                discount: 42,
+                description: 'حزام قضيب احترافي للأزواج مع مجموعة متكاملة من الملحقات. يتضمن حزام قابل للتعديل، قضيب واقعي، وحدة تحكم بالاهتزاز، وقطع إضافية للتخصيص. تصميم مريح وآمن للاستخدام المطول.',
+                features: ['حزام قابل للتعديل لجميع الأحجام', 'قضيب واقعي بملمس طبيعي', 'وحدة تحكم بالاهتزاز', 'ملحقات إضافية متنوعة', 'مواد عالية الجودة', 'تصميم مريح وآمن', 'سهل التنظيف', 'مقاوم للماء', 'مناسب للمبتدئين والمحترفين', 'ضمان الجودة'],
+                rating: 4.8,
+                reviews: 423,
+                isTech: true
+            },
+            { 
+                id: 40, 
+                name: 'مجموعة حزام الأزواج المتطورة مع قضيب واقعي وملحقات شاملة', 
+                category: 'couples', 
+                price: 145, 
+                originalPrice: 255, 
+                images: [
+                    'https://pfst.cf2.poecdn.net/base/image/7827b0aaff99ab31fc74b223935df75c254298642517cf4b7ecea012c296d7a0?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/5748804253c9464098b32c6e72dfa7d4b0b67023747bef6815bad297f27c20f5?w=800&h=800'
+                ],
+                gradient: 'from-pink-600 to-purple-700', 
+                discount: 43,
+                description: 'مجموعة حزام الأزواج المتطورة تتضمن قضيب واقعي بلون البشرة الطبيعي مع حزام جلدي أسود قابل للتعديل. تصميم أنيق ومريح مع ملحقات إضافية لتجربة متكاملة ومثيرة.',
+                features: ['قضيب واقعي بلون البشرة', 'حزام جلدي أسود فاخر', 'قابل للتعديل لجميع الأحجام', 'ملحقات إضافية شاملة', 'تصميم أنيق ومتطور', 'مواد آمنة وعالية الجودة', 'سهل الاستخدام والتنظيف', 'مريح للاستخدام المطول', 'مناسب للأزواج', 'تعليمات مفصلة'],
+                rating: 4.6,
+                reviews: 298,
+                isLeather: true
+            },
+            { 
+                id: 41, 
+                name: 'سيت الأزواج الشامل - حزام متطور مع قضيب واقعي وتحكم لاسلكي متقدم', 
+                category: 'couples', 
+                price: 275, 
+                originalPrice: 485, 
+                images: [
+                    'https://pfst.cf2.poecdn.net/base/image/1bddaba6216a744194ab4b51aca49cf2948461b15ea1048210e657cbfa00a696?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/249e62a3855b57036743e9f5f3eb89a425ffedcf3591806a90328567330501b1?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/a4b401b33febf0ce2ac79c35a64448f5b02bcfe022a95fe76ccf6f4c95a6d315?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/82aef59344f92d98346cda462f8277520730cf11fdab050ed48b8ede3dbc3f78?w=800&h=800'
+                ],
+                gradient: 'from-gray-800 to-black', 
+                discount: 43,
+                description: 'سيت الأزواج الشامل والأكثر تطوراً مع حزام جلدي فاخر وقضيب واقعي متقدم. يتضمن وحدة تحكم لاسلكية متطورة، ملحقات متنوعة، وإكسسوارات شاملة لتجربة استثنائية ومتكاملة.',
+                features: ['حزام جلدي فاخر قابل للتعديل', 'قضيب واقعي متطور', 'وحدة تحكم لاسلكية', 'ملحقات متنوعة شاملة', 'إكسسوارات إضافية متطورة', 'تصميم احترافي وأنيق', 'مواد فائقة الجودة', 'تكنولوجيا متقدمة', 'مناسب للخبراء والمبتدئين', 'ضمان شامل وخدمة ما بعد البيع'],
+                rating: 4.9,
+                reviews: 512,
+                isTech: true,
+                isLeather: true
             }
         ];
 
@@ -2409,8 +2990,8 @@
 
         function generateHomeProducts() {
             const grid = document.getElementById('home-products-grid');
-            // Show first 12 products on homepage
-            const homeProducts = products.slice(0, 12);
+            // Show all products on homepage
+            const homeProducts = products;
             
             grid.innerHTML = homeProducts.map(product => {
                 const mainImage = product.images[0];
@@ -2712,14 +3293,13 @@
             // updateCartUI();
         }
 
-        // Generate Tech Vibrators (will be populated once you send the products)
+        // Generate Tech Vibrators 
         function generateTechVibrators() {
             const grid = document.getElementById('tech-vibrators-grid');
             
-            // Filter products that are marked as "tech vibrators"
-            // For now, we'll show all vibrator products until new ones are added
+            // Filter products that are marked as "tech vibrators" or in women/couples categories
             const techProducts = products.filter(product => 
-                product.category === 'women' || product.category === 'couples'
+                product.isTech || product.category === 'women' || product.category === 'couples'
             );
             
             if (techProducts.length === 0) {
@@ -2777,6 +3357,241 @@
                     </div>
                 `;
             }).join('');
+        }
+
+        // Generate Leather Dildos
+        function generateLeatherDildos() {
+            const grid = document.getElementById('leather-dildos-grid');
+            
+            // Filter products that are marked as "leather" category
+            const leatherProducts = products.filter(product => 
+                product.category === 'leather' || product.isLeather
+            );
+            
+            if (leatherProducts.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-20">
+                        <div class="text-6xl mb-4">🖤</div>
+                        <h3 class="text-2xl font-bold mb-4">قريباً - منتجات جلدية واقعية متطورة!</h3>
+                        <p class="text-gray-600 dark:text-gray-300">سنضيف قريباً أحدث الأقضيب الجلدية الواقعية عالية الجودة</p>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = leatherProducts.map(product => {
+                const mainImage = product.images[0];
+                const hasMultipleImages = product.images.length > 1;
+                
+                const colorShiftClass = `color-shift-${((parseInt(product.id) % 5) + 1)}`;
+                const sparkles = '<div class="sparkle"></div><div class="sparkle"></div><div class="sparkle"></div><div class="sparkle"></div>';
+                
+                return `
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden card-hover product-card relative cursor-pointer gradient-border glow-effect" data-category="${product.category}" onclick="showProductModal('${product.id}')">
+                        <div class="discount-badge animate-bounce">خصم ${product.discount}%</div>
+                        <div class="absolute top-15 left-4 bg-gradient-to-r from-gray-800 to-black text-white px-3 py-1 rounded-full text-xs font-bold z-20">
+                            🖤 جلدي واقعي
+                        </div>
+                        <div class="product-image-container overflow-hidden relative">
+                            <div class="absolute inset-0 ${colorShiftClass} opacity-30 z-0"></div>
+                            ${sparkles}
+                            <img src="${mainImage}" alt="${product.name}" class="product-image relative z-10">
+                            ${hasMultipleImages ? '<div class="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-xs z-20"><i class="fas fa-images mr-1"></i>' + product.images.length + '</div>' : ''}
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold mb-2 line-clamp-2">${product.name}</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-2 line-clamp-2">${product.description}</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400 text-sm">
+                                    ${generateStarRating(product.rating)}
+                                </div>
+                                <span class="text-xs text-gray-500 mr-2">(${product.reviews} تقييم)</span>
+                            </div>
+                            <p class="stock-indicator mb-3">
+                                <i class="fas fa-check-circle"></i> متوفر - كمية كبيرة
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="text-lg font-bold text-primary currency-price" data-price="${product.price}">${(product.price * currentExchangeRate).toFixed(2)} ${currentCurrencySymbol}</span>
+                                    <span class="text-sm text-gray-500 line-through mr-2">${(product.originalPrice * currentExchangeRate).toFixed(2)} ${currentCurrencySymbol}</span>
+                                </div>
+                                <button onclick="event.stopPropagation(); addToCart('${product.id}', '${product.name}', ${product.price})" class="bg-primary text-white px-3 py-2 rounded-lg hover:bg-purple-700 transition-colors text-sm">
+                                    أضف للسلة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Show Gift Modal Function
+        function showGiftModal() {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+            modal.innerHTML = `
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg max-w-md w-full mx-4">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">🎁</div>
+                        <h3 class="text-2xl font-bold mb-4 text-pink-600">خدمة إرسال الهدايا الفاخرة</h3>
+                        
+                        <div class="bg-gradient-to-r from-pink-500 to-purple-500 p-6 rounded-lg mb-6 text-white">
+                            <h4 class="text-xl font-bold mb-3">💝 أرسل هدية مميزة</h4>
+                            <p class="text-sm mb-2">تغليف فاخر وسري</p>
+                            <p class="text-sm">رسالة شخصية مجانية</p>
+                        </div>
+                        
+                        <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg mb-6">
+                            <h4 class="font-bold text-gray-800 dark:text-gray-200 mb-2">🎨 خدمات التغليف:</h4>
+                            <ul class="text-sm text-gray-700 dark:text-gray-300 text-right space-y-1">
+                                <li>🔸 تغليف فاخر بورق هدايا أنيق</li>
+                                <li>🔸 بطاقة رسالة شخصية</li>
+                                <li>🔸 شحن سري ومجهول تماماً</li>
+                                <li>🔸 توقيت التسليم حسب رغبتك</li>
+                                <li>🔸 خدمة عملاء 24/7</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <button onclick="showPage('products'); this.closest('.fixed').remove();" class="w-full bg-pink-500 text-white py-3 rounded-lg hover:bg-pink-600 transition-colors">
+                                <i class="fas fa-gift mr-2"></i>
+                                اختر هدية من المتجر
+                            </button>
+                            <button onclick="showCustomGiftForm()" class="w-full bg-purple-500 text-white py-3 rounded-lg hover:bg-purple-600 transition-colors">
+                                <i class="fas fa-heart mr-2"></i>
+                                طلب هدية مخصصة
+                            </button>
+                            <button onclick="this.closest('.fixed').remove()" class="w-full bg-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-400 transition-colors">
+                                إغلاق
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        // Show Custom Gift Form
+        function showCustomGiftForm() {
+            // Close current modal
+            document.querySelector('.fixed.inset-0').remove();
+            
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+            modal.innerHTML = `
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg max-w-lg w-full mx-4 max-h-[90vh] overflow-y-auto">
+                    <div class="text-center mb-6">
+                        <div class="text-4xl mb-4">💌</div>
+                        <h3 class="text-2xl font-bold mb-2 text-purple-600">طلب هدية مخصصة</h3>
+                        <p class="text-gray-600 dark:text-gray-300">املأ النموذج وسنتواصل معك خلال ساعة</p>
+                    </div>
+                    
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-bold mb-2">اسمك:</label>
+                            <input type="text" class="w-full p-3 border rounded-lg text-base" placeholder="أدخل اسمك">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-bold mb-2">رقم الهاتف:</label>
+                            <input type="tel" class="w-full p-3 border rounded-lg text-base" placeholder="مثل: +966501234567">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-bold mb-2">نوع الهدية المطلوبة:</label>
+                            <select class="w-full p-3 border rounded-lg text-base">
+                                <option>للزوجة/الحبيبة</option>
+                                <option>للزوج/الحبيب</option>
+                                <option>للأزواج معاً</option>
+                                <option>هدية مفاجأة</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-bold mb-2">الميزانية المتوقعة:</label>
+                            <select class="w-full p-3 border rounded-lg text-base">
+                                <option>أقل من 200 ريال</option>
+                                <option>200 - 500 ريال</option>
+                                <option>500 - 1000 ريال</option>
+                                <option>أكثر من 1000 ريال</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-bold mb-2">عنوان التسليم:</label>
+                            <textarea class="w-full p-3 border rounded-lg text-base" rows="3" placeholder="أدخل العنوان كاملاً مع تفاصيل التسليم"></textarea>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-bold mb-2">رسالة شخصية (اختيارية):</label>
+                            <textarea class="w-full p-3 border rounded-lg text-base" rows="3" placeholder="اكتب رسالة خاصة لإضافتها مع الهدية"></textarea>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-bold mb-2">وقت التسليم المفضل:</label>
+                            <select class="w-full p-3 border rounded-lg text-base">
+                                <option>في أسرع وقت</option>
+                                <option>صباحاً (9 ص - 12 ظ)</option>
+                                <option>بعد الظهر (12 ظ - 6 م)</option>
+                                <option>مساءً (6 م - 10 م)</option>
+                                <option>تاريخ محدد</option>
+                            </select>
+                        </div>
+                        
+                        <div class="space-y-3 pt-4">
+                            <button type="button" onclick="submitGiftRequest()" class="w-full bg-gradient-to-r from-pink-500 to-purple-500 text-white py-3 rounded-lg hover:from-pink-600 hover:to-purple-600 transition-all">
+                                <i class="fas fa-paper-plane mr-2"></i>
+                                إرسال الطلب
+                            </button>
+                            <button type="button" onclick="this.closest('.fixed').remove()" class="w-full bg-gray-300 text-gray-700 py-2 rounded-lg hover:bg-gray-400 transition-colors">
+                                إلغاء
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        // Submit Gift Request
+        function submitGiftRequest() {
+            // Show success message
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+            modal.innerHTML = `
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg max-w-md w-full mx-4">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">✅</div>
+                        <h3 class="text-2xl font-bold mb-4 text-green-600">تم إرسال طلبك بنجاح!</h3>
+                        
+                        <div class="bg-green-100 dark:bg-green-900 p-4 rounded-lg mb-6">
+                            <p class="text-green-800 dark:text-green-200 font-bold mb-2">🎉 شكراً لك!</p>
+                            <p class="text-sm text-green-700 dark:text-green-300">
+                                سيتواصل معك فريق الهدايا المخصصة خلال ساعة واحدة عبر الواتساب لتأكيد التفاصيل واختيار الهدية المثالية
+                            </p>
+                        </div>
+                        
+                        <div class="bg-blue-100 dark:bg-blue-900 p-4 rounded-lg mb-6">
+                            <h4 class="font-bold text-blue-800 dark:text-blue-200 mb-2">📱 طرق التواصل:</h4>
+                            <p class="text-sm text-blue-700 dark:text-blue-300">
+                                واتساب: +966 50 123 4567<br>
+                                أو انتظر مكالمتنا خلال ساعة
+                            </p>
+                        </div>
+                        
+                        <button onclick="document.querySelectorAll('.fixed.inset-0').forEach(m => m.remove())" class="w-full bg-primary text-white py-3 rounded-lg hover:bg-purple-700 transition-colors">
+                            ممتاز، شكراً
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            // Remove previous modal
+            document.querySelectorAll('.fixed.inset-0').forEach(m => m.remove());
+            document.body.appendChild(modal);
+            
+            // Add points for gift request
+            addPoints(50, 'طلب هدية مخصصة');
         }
 
         // Initialize on page load
