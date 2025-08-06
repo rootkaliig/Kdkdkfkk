@@ -10,11 +10,24 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#EC4899',
-                        secondary: '#F472B6',
-                        accent: '#BE185D',
+                        primary: '#FF6B35',
+                        secondary: '#F7931E',
+                        accent: '#FFD23F',
                         gold: '#FFD700',
                         platinum: '#E5E4E2',
+                        neon: {
+                            blue: '#00FFFF',
+                            pink: '#FF1493',
+                            green: '#00FF00',
+                            purple: '#9D00FF',
+                            orange: '#FF8C00',
+                            yellow: '#FFFF00'
+                        },
+                        gradient: {
+                            start: '#FF6B35',
+                            middle: '#F7931E',
+                            end: '#FFD23F'
+                        },
                         pink: {
                             50: '#FDF2F8',
                             100: '#FCE7F3',
@@ -35,6 +48,12 @@
                         'bounce-slow': 'bounce 2s infinite',
                         'pulse-slow': 'pulse 3s infinite',
                         'float': 'float 3s ease-in-out infinite',
+                        'glow-pulse': 'glowPulse 2s ease-in-out infinite alternate',
+                        'rainbow': 'rainbow 3s linear infinite',
+                        'neon-flicker': 'neonFlicker 1.5s ease-in-out infinite alternate',
+                        'button-press': 'buttonPress 0.1s ease-in-out',
+                        'mega-glow': 'megaGlow 4s ease-in-out infinite',
+                        'color-shift': 'colorShift 8s ease infinite',
                     }
                 }
             }
@@ -80,30 +99,117 @@
             50% { background-position: 100% 50%; }
         }
 
-        /* Neon Glow Effects */
+        /* Enhanced Neon Glow Effects */
         .neon-glow {
             box-shadow: 
-                0 0 20px #FFD700,
-                0 0 40px #FFA500,
-                0 0 60px #FF8C00,
-                inset 0 0 20px rgba(255, 215, 0, 0.2);
-            animation: neonPulse 3s ease infinite;
+                0 0 30px #FF6B35,
+                0 0 60px #F7931E,
+                0 0 90px #FFD23F,
+                0 0 120px #FF8C00,
+                inset 0 0 30px rgba(255, 107, 53, 0.3);
+            animation: neonPulseAdvanced 2.5s ease infinite;
+            border: 2px solid transparent;
+            background: linear-gradient(45deg, #FF6B35, #F7931E, #FFD23F) border-box;
         }
 
-        @keyframes neonPulse {
+        @keyframes neonPulseAdvanced {
             0%, 100% { 
                 box-shadow: 
-                    0 0 20px #FFD700,
-                    0 0 40px #FFA500,
-                    0 0 60px #FF8C00,
-                    inset 0 0 20px rgba(255, 215, 0, 0.2);
+                    0 0 30px #FF6B35,
+                    0 0 60px #F7931E,
+                    0 0 90px #FFD23F,
+                    0 0 120px #FF8C00,
+                    inset 0 0 30px rgba(255, 107, 53, 0.3);
+                transform: scale(1);
+            }
+            25% {
+                box-shadow: 
+                    0 0 40px #F7931E,
+                    0 0 80px #FFD23F,
+                    0 0 120px #FF6B35,
+                    0 0 160px #FFA500,
+                    inset 0 0 40px rgba(247, 147, 30, 0.4);
+                transform: scale(1.02);
             }
             50% { 
                 box-shadow: 
-                    0 0 30px #FFD700,
-                    0 0 60px #FFA500,
-                    0 0 90px #FF8C00,
-                    inset 0 0 30px rgba(255, 215, 0, 0.4);
+                    0 0 50px #FFD23F,
+                    0 0 100px #FF6B35,
+                    0 0 150px #F7931E,
+                    0 0 200px #FF4500,
+                    inset 0 0 50px rgba(255, 210, 63, 0.5);
+                transform: scale(1.05);
+            }
+            75% {
+                box-shadow: 
+                    0 0 40px #F7931E,
+                    0 0 80px #FFD23F,
+                    0 0 120px #FF6B35,
+                    0 0 160px #FFA500,
+                    inset 0 0 40px rgba(247, 147, 30, 0.4);
+                transform: scale(1.02);
+            }
+        }
+
+        /* Mega Glow Effects */
+        .mega-glow {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mega-glow::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                from 0deg,
+                #FF6B35,
+                #F7931E,
+                #FFD23F,
+                #FF8C00,
+                #FF4500,
+                #FF6B35
+            );
+            animation: megaGlowRotate 3s linear infinite;
+            z-index: -1;
+            border-radius: inherit;
+        }
+
+        .mega-glow::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            background: inherit;
+            border-radius: inherit;
+            z-index: 0;
+        }
+
+        @keyframes megaGlowRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Pulsing Rainbow Glow */
+        .pulse-glow {
+            animation: pulseGlowEffect 3s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlowEffect {
+            0%, 100% {
+                box-shadow: 
+                    0 0 20px rgba(255, 107, 53, 0.6),
+                    0 0 40px rgba(247, 147, 30, 0.4),
+                    0 0 60px rgba(255, 210, 63, 0.3);
+            }
+            50% {
+                box-shadow: 
+                    0 0 40px rgba(255, 107, 53, 0.8),
+                    0 0 80px rgba(247, 147, 30, 0.6),
+                    0 0 120px rgba(255, 210, 63, 0.5),
+                    0 0 160px rgba(255, 140, 0, 0.3);
             }
         }
 
@@ -982,16 +1088,22 @@
 
         /* Enhanced Button Styles */
         .enhanced-product-btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 50%, #FFD23F 100%);
             color: white;
             border: none;
-            padding: 12px 24px;
-            border-radius: 15px;
+            padding: 15px 30px;
+            border-radius: 20px;
             font-weight: bold;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             position: relative;
             overflow: hidden;
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+            box-shadow: 
+                0 8px 25px rgba(255, 107, 53, 0.4),
+                0 0 40px rgba(247, 147, 30, 0.3),
+                inset 0 0 20px rgba(255, 210, 63, 0.2);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .enhanced-product-btn::before {
@@ -1001,20 +1113,95 @@
             left: 50%;
             width: 0;
             height: 0;
-            background: rgba(255, 255, 255, 0.3);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
             border-radius: 50%;
             transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
+            transition: width 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), height 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .enhanced-product-btn:hover::before {
-            width: 300px;
-            height: 300px;
+            width: 400px;
+            height: 400px;
         }
 
         .enhanced-product-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 
+                0 15px 40px rgba(255, 107, 53, 0.6),
+                0 0 80px rgba(247, 147, 30, 0.5),
+                inset 0 0 30px rgba(255, 210, 63, 0.3);
+            background: linear-gradient(135deg, #F7931E 0%, #FFD23F 50%, #FF6B35 100%);
+        }
+
+        .enhanced-product-btn:active {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 
+                0 8px 20px rgba(255, 107, 53, 0.8),
+                0 0 60px rgba(247, 147, 30, 0.7);
+        }
+
+        /* Neon Button Effects */
+        .neon-btn {
+            background: transparent;
+            border: 2px solid #FF6B35;
+            color: #FF6B35;
+            padding: 12px 24px;
+            border-radius: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 
+                0 0 20px rgba(255, 107, 53, 0.3),
+                inset 0 0 20px rgba(255, 107, 53, 0.1);
+        }
+
+        .neon-btn:hover {
+            color: white;
+            background: #FF6B35;
+            box-shadow: 
+                0 0 40px rgba(255, 107, 53, 0.6),
+                0 0 80px rgba(247, 147, 30, 0.4),
+                inset 0 0 40px rgba(255, 210, 63, 0.2);
+            transform: scale(1.05);
+        }
+
+        /* Holographic Button */
+        .holo-btn {
+            background: linear-gradient(45deg, 
+                #FF6B35, #F7931E, #FFD23F, #FF8C00, #FF4500);
+            background-size: 400% 400%;
+            animation: holoShimmer 3s ease infinite;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 8px 25px rgba(255, 107, 53, 0.4),
+                0 0 50px rgba(247, 147, 30, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        @keyframes holoShimmer {
+            0%, 100% { background-position: 0% 50%; }
+            25% { background-position: 100% 0%; }
+            50% { background-position: 100% 100%; }
+            75% { background-position: 0% 100%; }
+        }
+
+        .holo-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 
+                0 15px 40px rgba(255, 107, 53, 0.6),
+                0 0 100px rgba(247, 147, 30, 0.5);
+            animation-duration: 1.5s;
         }
 
         /* Product Image Enhancements */
@@ -1303,6 +1490,7 @@
                     <a href="#" class="nav-link" onclick="showPage('products')">المنتجات</a>
                     <a href="#" class="nav-link" onclick="showPage('tech-vibrators')">الهزاز التكنولوجي</a>
                     <a href="#" class="nav-link" onclick="showPage('leather-dildos')">قضيب الجلدي</a>
+                    <a href="#" class="nav-link" onclick="showPage('vagina-products')">المهبل</a>
                     <a href="#" class="nav-link" onclick="showPage('shipping')">الشحن</a>
                     <a href="#" class="nav-link" onclick="showPage('contact')">اتصل بنا</a>
                 </div>
@@ -1807,6 +1995,29 @@
 
                 <div id="leather-dildos-grid" class="product-grid">
                     <!-- Leather dildo products will be generated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Vagina Products Page -->
+    <div id="vagina-products" class="page">
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+                <!-- Hero Section for Vagina Products -->
+                <div class="text-center mb-16 bg-gradient-to-r from-pink-500 to-red-500 text-white py-16 rounded-3xl">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 shimmer-text">🌹 منتجات المهبل الواقعية 🌹</h1>
+                    <p class="text-xl mb-4">منتجات واقعية 3D عالية الجودة مصممة خصيصاً للرجال</p>
+                    <div class="bg-white bg-opacity-20 rounded-lg p-6 mb-6 text-center max-w-4xl mx-auto">
+                        <h3 class="text-2xl font-bold mb-3">💎 جودة فاخرة وملمس واقعي 100% 💎</h3>
+                        <p class="text-lg mb-2">منتجات مصنوعة من أجود المواد بتقنية ثلاثية الأبعاد وملمس واقعي</p>
+                        <p class="text-lg mb-2">🎯 <strong>مميزات خاصة:</strong> سيليكون طبي، تصميم واقعي، سهولة التنظيف، أحجام متنوعة</p>
+                        <p class="text-lg font-bold text-yellow-300">🔥 تجربة واقعية لا تُنسى مع أعلى معايير الجودة! 🔥</p>
+                    </div>
+                </div>
+
+                <div id="vagina-products-grid" class="product-grid">
+                    <!-- Vagina products will be generated by JavaScript -->
                 </div>
             </div>
         </section>
@@ -2935,6 +3146,118 @@
                 reviews: 512,
                 isTech: true,
                 isLeather: true
+            },
+            { 
+                id: 42, 
+                name: '23.5 سم واقعية القضيب دسار سميكة', 
+                category: 'women', 
+                price: 205, 
+                originalPrice: 345, 
+                images: [
+                    'https://pfst.cf2.poecdn.net/base/image/18c15bde0a627c951e8b7fe7de2457d171750adcce8c7cdf05005d69fc2f3804?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/f571942761e357fdf4839b79fad041cc0bf3275f1dbdf10b6f797a6b9c369f1a?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/04e28daf9939a0b0b588563e6e414d6f37f5e2101017c8110b9f89cc4dbe7e5b?w=247&h=247'
+                ],
+                gradient: 'from-pink-400 to-rose-500', 
+                discount: 41,
+                description: '23.5 سم قضيب دسار سميك واقعي، الطول: 23.5 سم، السُمك: 6.8 سم، الطول القابل للاستخدام: 16.5 سم. مصنوع من مواد عالية الجودة بملمس واقعي فائق النعومة.',
+                features: ['الطول الكامل 23.5 سم', 'السُمك الواقعي 6.8 سم', 'الطول القابل للاستخدام 16.5 سم', 'ملمس بشرة واقعي', 'مادة سيليكون عالية الجودة', 'قاعدة مسطحة للتثبيت', 'مقاوم للماء', 'سهل التنظيف', 'خالٍ من الفثالات', 'آمن للاستخدام'],
+                rating: 4.7,
+                reviews: 389
+            },
+            { 
+                id: 43, 
+                name: '31 سم واقعية كأس شفط دسار القضيب', 
+                category: 'women', 
+                price: 235, 
+                originalPrice: 395, 
+                images: [
+                    'https://pfst.cf2.poecdn.net/base/image/8b63e64ae8d342ed1cb720b8f50efc246ee5af109753f429b2f507a6be980be2?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/829ef5a6c7e4970168bc75bb2970b173e59f12b100a6b7ed86b968de2ddf64bb?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/17901967de7745670389ecf9dd4a1e66727bb2b8b14c8bb93fc5cf675bb3c08e?w=247&h=247'
+                ],
+                gradient: 'from-pink-500 to-orange-400', 
+                discount: 40,
+                description: 'الطول 31 سم، الطول القابل للاستخدام: 22 سم، سماكة 6 سم، ملمس بشرة واقعي، إمكانية التثبيت على أي أرضية بفضل اللاصق المطاطي القوي، مادة صديقة للبشرة سهلة التنظيف، بنية القضيب الطويلة، مادة خالية من الفثالات.',
+                features: ['الطول الكامل 31 سم', 'الطول القابل للاستخدام 22 سم', 'سماكة 6 سم', 'ملمس بشرة واقعي', 'لاصق مطاطي قوي للتثبيت', 'مادة صديقة للبشرة', 'سهلة التنظيف', 'بنية القضيب الطويلة', 'خالية من الفثالات', 'جودة عالية ومتانة'],
+                rating: 4.8,
+                reviews: 456
+            },
+            { 
+                id: 44, 
+                name: '48.5 سم قضيب دسار كبير الحجم على الوجهين', 
+                category: 'couples', 
+                price: 325, 
+                originalPrice: 550, 
+                images: [
+                    'https://pfst.cf2.poecdn.net/base/image/22f8686ed1099dfa31483f7692b431879d3cd1a3d7f82b5c18cb4d56c550b2ae?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/ab611d37bdd962fca534cfc5bb32f9220d81a9bc6ad8abbf8c252c038c2fdaf5?w=800&h=800'
+                ],
+                gradient: 'from-purple-500 to-pink-600', 
+                discount: 41,
+                description: '48.5 سم مزدوج من جانب كبير الحجم دسار القضيب، الطول: 48.5 سم، سمك 4.8 سم من طرف واحد، 3.6 سم في الطرف الآخر. مناسب للعلاقات المثلية والمخنثين. تصميم مزدوج متطور لتجربة فريدة.',
+                features: ['الطول الاستثنائي 48.5 سم', 'تصميم مزدوج الوجهين', 'سمك 4.8 سم من طرف', 'سمك 3.6 سم من الطرف الآخر', 'مناسب للأزواج والمجموعات', 'مرونة عالية ومتانة', 'ملمس واقعي فائق', 'مادة آمنة وعالية الجودة', 'سهل الاستخدام والتنظيف', 'تجربة مشتركة مثيرة'],
+                rating: 4.6,
+                reviews: 234
+            },
+            { 
+                id: 45, 
+                name: 'مزدوج دونغ ثنائي الاتجاه قضيب غضروفي مرن ذو اتجاهين 36 سم', 
+                category: 'couples', 
+                price: 285, 
+                originalPrice: 485, 
+                images: [
+                    'https://pfst.cf2.poecdn.net/base/image/20c9f30ff1ae70aace93875714f50e13c3a2f9e4522727abea5388a1226565ec?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/e70a8f176652e22f2909e09ee8a36ac3ef6cb6b9931fc6c4f246cc98a3ccfbc9?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/246714f64c72bd68ef88e3e661bb51a4c5ce8415c5f74ae5f06265d36d88986c?w=247&h=247',
+                    'https://pfst.cf2.poecdn.net/base/image/9dd99a46665790ed85feb5ab9ce92e533eb335cd1c74be8a54472283a4cc5c46?w=800&h=800'
+                ],
+                gradient: 'from-pink-500 to-red-600', 
+                discount: 41,
+                description: 'دسار جل مرن ذو اتجاهين مزدوج دونغ 36 سم. دسار جل مزدوج الوجهين دونغ له هيكل واقعي وعائي، يمكن ثنيه في جميع الاتجاهات وهو غضروفي. مصمم خصيصاً لكلا الطرفين لاستخدامهما معاً، مصنوع من مواد صديقة للبشرة وسهل التنظيف. الطول: 36 سم، القطر: 4.3 سم.',
+                features: ['دسار جل مزدوج الوجهين', 'هيكل واقعي وعائي متطور', 'يمكن ثنيه في جميع الاتجاهات', 'غضروفي ومرن', 'مصمم للاستخدام المشترك', 'مواد صديقة للبشرة', 'سهل التنظيف والصيانة', 'الطول الكامل 36 سم', 'القطر المثالي 4.3 سم', 'تجربة مشتركة استثنائية'],
+                rating: 4.7,
+                reviews: 324,
+                isLargeSize: true
+            },
+            { 
+                id: 46, 
+                name: 'مجموعة ضبط العبودية مع قابس الشرج - تسخير BDSM للأزواج، ألعاب المثيرة للعب البالغين', 
+                category: 'couples', 
+                price: 125, 
+                originalPrice: 225, 
+                images: [
+                    'https://pfst.cf2.poecdn.net/base/image/ec2e3b3f7591c56563b0957b7f9b08cc9b924463e59209284e72d226b0dc86df?w=750&h=750',
+                    'https://pfst.cf2.poecdn.net/base/image/eb866c2a4375aa781cee63fd287dffd6c9753d2663fa9344578c4849fda0a8dd?w=750&h=750',
+                    'https://pfst.cf2.poecdn.net/base/image/2602dd9e00dcc9516583b4939041d171ca52d49418c03343249651d4b5b6f927?w=750&h=750'
+                ],
+                gradient: 'from-gray-900 to-black', 
+                discount: 44,
+                description: 'مجموعة ضبط العبودية الكاملة مع قابس الشرج وتسخير BDSM للأزواج. مجموعة شاملة من ألعاب العبودية المثيرة للعب البالغين، تتضمن تسخير مريح وقابس شرجي آمن مصنوع من مواد عالية الجودة. مثالي للأزواج الذين يرغبون في تجربة جديدة ومثيرة.',
+                features: ['مجموعة شاملة للعبودية', 'تسخير BDSM مريح وآمن', 'قابس شرجي عالي الجودة', 'مواد آمنة ومرنة', 'مناسب للمبتدئين والمحترفين', 'تصميم أنيق وعملي', 'سهل الاستخدام والتنظيف', 'مقاوم للماء', 'ضمان الجودة والأمان', 'تجربة مثيرة للأزواج'],
+                rating: 4.5,
+                reviews: 198,
+                isBDSM: true
+            },
+            { 
+                id: 47, 
+                name: 'قابس الشرج البلوري للنساء - تحفيز وتدليك متطور مع أحجار كريمة', 
+                category: 'women', 
+                price: 95, 
+                originalPrice: 175, 
+                images: [
+                    'https://pfst.cf2.poecdn.net/base/image/ca768566c3bc7e0fb0364225e52309d64a9f7e87fe8bf73f1c8e475558a5fe47?w=800&h=800',
+                    'https://pfst.cf2.poecdn.net/base/image/37a8a37bbfc00237180fa07ee84a9580353e149cfce1a2f943ed13a9e6851516?w=800&h=800',
+                    'https://pfst.cf2.poecdn.net/base/image/4f29467b1ca790a9f33d3c34d8580f1290e7c0496ab9621207434ada3c2b181b?w=800&h=800',
+                    'https://pfst.cf2.poecdn.net/base/image/5441049669a6c86cc1eddb93e439de88cf3116ba69338d0ac2d63de3773e984d?w=800&h=800'
+                ],
+                gradient: 'from-pink-400 to-purple-500', 
+                discount: 46,
+                description: 'قابس الشرج البلوري الفاخر للنساء مصنوع من الزجاج الطبي عالي الجودة مع أحجار كريمة وردية جميلة. مصمم خصيصاً لتحفيز وتدليك المناطق الحساسة بأمان وراحة تامة. تصميم أنيق وعملي مع قاعدة آمنة لمنع الانزلاق العميق.',
+                features: ['زجاج طبي عالي الجودة', 'أحجار كريمة وردية فاخرة', 'تصميم آمن ومريح', 'قاعدة عريضة للأمان', 'سطح أملس وناعم', 'سهل التنظيف والتعقيم', 'مقاوم لدرجات الحرارة', 'تصميم أنيق وجميل', 'مناسب للمبتدئين', 'خالٍ من المواد الضارة'],
+                rating: 4.8,
+                reviews: 267,
+                isCrystal: true
             }
         ];
 
@@ -3357,6 +3680,359 @@
                     </div>
                 `;
             }).join('');
+        }
+
+        // Generate Vagina Products  
+        function generateVaginaProducts() {
+            const grid = document.getElementById('vagina-products-grid');
+            
+            // Filter products that are for men or marked as vagina products
+            const vaginaProducts = [
+                {
+                    id: 'v1',
+                    name: '2 وظيفة 3D واقعية الورك الاصطناعي المهبل فتحة الشرج',
+                    description: 'واقعية 2 وظيفة الورك، 0 سيليكون TPR قابل للغسل، مصنوعة من مادة لوفكلون في نسيج اللحم، في هيكل واقعي، مع وحدة الاهتزاز، مع خاصية العلاقة بين وظيفتين، واقعي تمامًا في ملمس بشرة واقعي، يناسب بسهولة أي حجم القضيب، مقاس الوسط، هيكل سيليكون فائق النعومة، سهل التنظيف، وهي مصنوعة من مواد صديقة للبشرة. طول 24 سم، عرض 24 سم.',
+                    price: 245,
+                    originalPrice: 425,
+                    discount: 42,
+                    images: ['https://pfst.cf2.poecdn.net/base/image/aedf63d37ff32046de7bbba039fb8edf7da60f3458585b936fa9ff7f4c8cdc80?w=768&h=768'],
+                    features: ['وظيفتان واقعيتان', 'سيليكون TPR عالي الجودة', 'ملمس واقعي', 'وحدة اهتزاز', 'سهل التنظيف', 'مواد صديقة للبشرة', 'طول 24 سم × عرض 24 سم'],
+                    rating: 4.7,
+                    reviews: 234
+                },
+                {
+                    id: 'v2',
+                    name: 'مهبل واقعي متعدد الوظائف مع تحفيز البظر والاهتزاز',
+                    description: 'مهبل واقعي ثلاثي الأبعاد مع تصميم متطور للتحفيز المتعدد. يتميز بملمس واقعي ووظائف اهتزاز متقدمة لتجربة استثنائية.',
+                    price: 195,
+                    originalPrice: 335,
+                    discount: 42,
+                    images: ['https://pfst.cf2.poecdn.net/base/image/2e34b9e047c59f2d0ed96177751b25d1588c81c30f80d49c9d59cfef6d72d85d?w=768&h=768'],
+                    features: ['تصميم ثلاثي الأبعاد', 'تحفيز البظر', 'اهتزازات متعددة', 'ملمس واقعي', 'سيليكون طبي', 'مقاوم للماء'],
+                    rating: 4.8,
+                    reviews: 198
+                },
+                {
+                    id: 'v3',
+                    name: 'مهبل واقعي مع خرز تحفيز داخلي وملمس متقدم',
+                    description: 'تصميم واقعي مع خرز تحفيز داخلي وملمس متطور. مصنوع من أجود المواد لتجربة واقعية لا تُنسى.',
+                    price: 165,
+                    originalPrice: 285,
+                    discount: 42,
+                    images: ['https://pfst.cf2.poecdn.net/base/image/984f33969e44b8375cb20ddc6afdcd9c3f3e081839583c3d5ec0b72acf2d5bb3?w=768&h=768'],
+                    features: ['خرز تحفيز داخلي', 'ملمس متطور', 'تصميم واقعي', 'مواد عالية الجودة', 'سهل الاستخدام', 'آمن ومريح'],
+                    rating: 4.6,
+                    reviews: 167
+                },
+                {
+                    id: 'v4',
+                    name: 'مهبل واقعي بعلبة تخزين أنيقة مع ملحقات متكاملة',
+                    description: 'مهبل واقعي عالي الجودة يأتي في علبة تخزين أنيقة مع مجموعة متكاملة من الملحقات والإكسسوارات.',
+                    price: 285,
+                    originalPrice: 485,
+                    discount: 41,
+                    images: ['https://pfst.cf2.poecdn.net/base/image/f7625a929b1447cdea5608b37e28a2cd4e5ef51f8c17343ab68afdfac83e9be1?w=768&h=645'],
+                    features: ['علبة تخزين أنيقة', 'ملحقات متكاملة', 'جودة احترافية', 'تصميم متطور', 'سهل الحفظ', 'ضمان الخصوصية'],
+                    rating: 4.9,
+                    reviews: 312
+                },
+                {
+                    id: 'v5',
+                    name: 'مهبل واقعي بتقنية الاهتزاز الذكي والتحكم المتقدم',
+                    description: 'مهبل واقعي مزود بتقنية الاهتزاز الذكي مع إمكانيات تحكم متقدمة. تصميم أنيق وعملي لتجربة فائقة.',
+                    price: 225,
+                    originalPrice: 385,
+                    discount: 42,
+                    images: ['https://pfst.cf2.poecdn.net/base/image/9d0d4c734fb18b162ea630a580bff41066651c6bafccac21fbcee7fa209797fd?w=768&h=768'],
+                    features: ['اهتزاز ذكي', 'تحكم متقدم', 'تصميم أنيق', 'تقنية متطورة', 'سهل الاستخدام', 'جودة فائقة'],
+                    rating: 4.8,
+                    reviews: 256
+                },
+                {
+                    id: 'v6',
+                    name: 'مهبل واقعي متعدد الوظائف مع حلقات تحفيز وملمس طبيعي',
+                    description: 'مهبل واقعي بتصميم متعدد الوظائف يحتوي على حلقات تحفيز وملمس طبيعي فائق الواقعية. مناسب لجميع الأحجام.',
+                    price: 175,
+                    originalPrice: 295,
+                    discount: 41,
+                    images: ['https://pfst.cf2.poecdn.net/base/image/fc491807d2921c23bd7e8ae929db55d1c15a469a73ffbbf9dd071dd81014585c?w=768&h=768'],
+                    features: ['حلقات تحفيز متطورة', 'ملمس طبيعي فائق', 'متعدد الوظائف', 'مناسب لجميع الأحجام', 'تصميم مرن', 'سهل التنظيف'],
+                    rating: 4.7,
+                    reviews: 189
+                },
+                {
+                    id: 'v7',
+                    name: 'مهبل واقعي مع وحدة اهتزاز قابلة للفصل وإكسسوارات شاملة',
+                    description: 'مهبل واقعي متطور مع وحدة اهتزاز قابلة للفصل ومجموعة شاملة من الإكسسوارات. تجربة واقعية ومتكاملة.',
+                    price: 325,
+                    originalPrice: 550,
+                    discount: 41,
+                    images: ['https://pfst.cf2.poecdn.net/base/image/2030eef455449d5f0b34b0b1f82d2cedd4d8e0e0847784d8e84b082f90ae8a0c?w=768&h=768'],
+                    features: ['وحدة اهتزاز قابلة للفصل', 'إكسسوارات شاملة', 'تجربة متكاملة', 'جودة احترافية', 'تصميم متطور', 'ضمان الرضا'],
+                    rating: 4.9,
+                    reviews: 278
+                },
+                {
+                    id: 'v8',
+                    name: 'مهبل واقعي كامل الحجم مع ملامح تشريحية دقيقة',
+                    description: 'مهبل واقعي كامل الحجم بملامح تشريحية دقيقة وواقعية. مصنوع من أجود المواد لتجربة طبيعية كاملة.',
+                    price: 195,
+                    originalPrice: 335,
+                    discount: 42,
+                    images: ['https://pfst.cf2.poecdn.net/base/image/fb53e66e0b7f36aa321e679c38d99c9f52619827c3cf10a35d0c626d37b410af?w=768&h=768'],
+                    features: ['كامل الحجم', 'ملامح تشريحية دقيقة', 'واقعية فائقة', 'مواد عالية الجودة', 'تجربة طبيعية', 'تصميم مريح'],
+                    rating: 4.8,
+                    reviews: 345
+                },
+                {
+                    id: 'v9',
+                    name: 'مهبل واقعي متطور مع تقنية التدفئة والاهتزاز المزدوج',
+                    description: 'مهبل واقعي متطور مزود بتقنية التدفئة والاهتزاز المزدوج. تجربة واقعية بأحدث التقنيات المتاحة.',
+                    price: 425,
+                    originalPrice: 725,
+                    discount: 41,
+                    images: ['https://pfst.cf2.poecdn.net/base/image/35375fb6685dd60401908f70356e73101c51a0786c4acd3bb9b005f6376214fa?w=768&h=768'],
+                    features: ['تقنية التدفئة المتقدمة', 'اهتزاز مزدوج', 'أحدث التقنيات', 'تجربة واقعية فائقة', 'جودة استثنائية', 'ضمان طويل المدى'],
+                    rating: 4.9,
+                    reviews: 156
+                },
+                {
+                    id: 'v10',
+                    name: 'مهبل واقعي بتصميم ثلاثي الأبعاد مع ملمس حريري فائق',
+                    description: 'مهبل واقعي بتصميم ثلاثي الأبعاد متطور مع ملمس حريري فائق النعومة. تجربة لا تُضاهى من الراحة والواقعية.',
+                    price: 165,
+                    originalPrice: 285,
+                    discount: 42,
+                    images: ['https://pfst.cf2.poecdn.net/base/image/49890be75b1b3365ea44bd2619fa85eadb23e7045e614d0ab3b0ca6d91e96cd6?w=768&h=768'],
+                    features: ['تصميم ثلاثي الأبعاد متطور', 'ملمس حريري فائق', 'نعومة استثنائية', 'راحة مطلقة', 'واقعية لا تُضاهى', 'سهل الاستخدام'],
+                    rating: 4.6,
+                    reviews: 223
+                },
+                {
+                    id: 'v11',
+                    name: 'مهبل واقعي مع تحفيز نقاط الإثارة والملمس المضلع',
+                    description: 'مهبل واقعي مصمم خصيصاً لتحفيز نقاط الإثارة مع ملمس مضلع متطور. تجربة محسنة ومثيرة.',
+                    price: 185,
+                    originalPrice: 315,
+                    discount: 41,
+                    images: ['https://pfst.cf2.poecdn.net/base/image/d5204543d0edf796aca2a52eae0fd3969162f265f5778f58cdbdc8e1a4327142?w=768&h=768'],
+                    features: ['تحفيز نقاط الإثارة', 'ملمس مضلع متطور', 'تصميم محسن', 'تجربة مثيرة', 'جودة عالية', 'مريح ومرن'],
+                    rating: 4.7,
+                    reviews: 298
+                },
+                {
+                    id: 'v12',
+                    name: 'مهبل واقعي فاخر مع تقنية الذكاء الاصطناعي',
+                    description: 'مهبل واقعي فاخر مزود بتقنية الذكاء الاصطناعي للاستجابة التلقائية. تطور تقني متقدم لتجربة مستقبلية.',
+                    price: 385,
+                    originalPrice: 665,
+                    discount: 42,
+                    images: ['https://pfst.cf2.poecdn.net/base/image/959a199a60357ec479249077cc5e9947a8861e52084de8ea1c01f1f26b88ac3a?w=768&h=768'],
+                    features: ['تقنية الذكاء الاصطناعي', 'استجابة تلقائية', 'تطور تقني متقدم', 'تجربة مستقبلية', 'فخامة استثنائية', 'ضمان تقني شامل'],
+                    rating: 4.9,
+                    reviews: 167
+                },
+                {
+                    id: 'v13',
+                    name: 'مهبل واقعي محمول مع حقيبة سفر مخصصة وملحقات',
+                    description: 'مهبل واقعي محمول مصمم للسفر مع حقيبة مخصصة وملحقات متنوعة. حل مثالي للخصوصية والراحة.',
+                    price: 145,
+                    originalPrice: 245,
+                    discount: 41,
+                    images: ['https://pfst.cf2.poecdn.net/base/image/33b14d80403def4017c36bb34598ef9acebb0f54d514bc76510ba7ef82b79a88?w=768&h=768'],
+                    features: ['تصميم محمول', 'حقيبة سفر مخصصة', 'ملحقات متنوعة', 'خصوصية تامة', 'سهل النقل', 'مريح للاستخدام'],
+                    rating: 4.6,
+                    reviews: 278
+                },
+                {
+                    id: 'v14',
+                    name: 'مهبل واقعي بملمس فائق الواقعية مع تقنية التشحيم الذاتي',
+                    description: 'مهبل واقعي بملمس فائق الواقعية مزود بتقنية التشحيم الذاتي للراحة المطلقة والاستخدام السلس.',
+                    price: 275,
+                    originalPrice: 475,
+                    discount: 42,
+                    images: ['https://pfst.cf2.poecdn.net/base/image/e619839b2d5009700735047f00a434e5bbe87b8783187bff8f8ae2cde772b2af?w=768&h=768'],
+                    features: ['ملمس فائق الواقعية', 'تقنية التشحيم الذاتي', 'راحة مطلقة', 'استخدام سلس', 'تقنية متطورة', 'جودة استثنائية'],
+                    rating: 4.8,
+                    reviews: 245
+                },
+                {
+                    id: 'v15',
+                    name: 'مهبل واقعي احترافي مع وظائف متعددة ونظام تحكم ذكي',
+                    description: 'مهبل واقعي احترافي مع وظائف متعددة ونظام تحكم ذكي متطور. للمحترفين الباحثين عن التميز والجودة.',
+                    price: 495,
+                    originalPrice: 845,
+                    discount: 41,
+                    images: ['https://pfst.cf2.poecdn.net/base/image/959c5f4c20e49cbc9e1b0af9ba110bfd11dab4b334430b740e8b0ef8097834c3?w=768&h=768'],
+                    features: ['جودة احترافية', 'وظائف متعددة', 'نظام تحكم ذكي', 'للمحترفين', 'تميز في الجودة', 'ضمان شامل'],
+                    rating: 4.9,
+                    reviews: 134
+                },
+                {
+                    id: 'v16',
+                    name: 'مهبل واقعي مع ميزات تفاعلية وتطبيق تحكم عن بُعد',
+                    description: 'مهبل واقعي مزود بميزات تفاعلية وتطبيق تحكم عن بُعد عبر الهاتف الذكي. تكنولوجيا المستقبل في متناول يدك.',
+                    price: 365,
+                    originalPrice: 625,
+                    discount: 42,
+                    images: ['https://pfst.cf2.poecdn.net/base/image/f758e65335ffe5378a0de3fbc1ae255c68ec7eca178f482a588d275c645c501d?w=700&h=700'],
+                    features: ['ميزات تفاعلية', 'تطبيق تحكم عن بُعد', 'تكنولوجيا المستقبل', 'تحكم ذكي', 'ابتكار متطور', 'سهولة الاستخدام'],
+                    rating: 4.9,
+                    reviews: 189
+                }
+            ];
+
+            grid.innerHTML = vaginaProducts.map(product => {
+                const mainImage = product.images[0];
+                const hasMultipleImages = product.images.length > 1;
+                
+                const colorShiftClass = `color-shift-${((parseInt(product.id.replace('v', '')) % 5) + 1)}`;
+                const sparkles = '<div class="sparkle"></div><div class="sparkle"></div><div class="sparkle"></div><div class="sparkle"></div>';
+                
+                return `
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden card-hover product-card relative cursor-pointer gradient-border glow-effect" onclick="showVaginaProductModal('${product.id}')">
+                        <div class="discount-badge animate-bounce">خصم ${product.discount}%</div>
+                        <div class="absolute top-15 left-4 bg-gradient-to-r from-pink-500 to-red-500 text-white px-3 py-1 rounded-full text-xs font-bold z-20">
+                            🌹 واقعي 3D
+                        </div>
+                        <div class="product-image-container overflow-hidden relative">
+                            <div class="absolute inset-0 ${colorShiftClass} opacity-30 z-0"></div>
+                            ${sparkles}
+                            <img src="${mainImage}" alt="${product.name}" class="product-image relative z-10">
+                            ${hasMultipleImages ? '<div class="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-xs z-20"><i class="fas fa-images mr-1"></i>' + product.images.length + '</div>' : ''}
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-lg font-bold mb-2 line-clamp-2">${product.name}</h3>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-2 line-clamp-3">${product.description}</p>
+                            <div class="flex items-center mb-2">
+                                <div class="flex text-yellow-400 text-sm">
+                                    ${generateStarRating(product.rating)}
+                                </div>
+                                <span class="text-xs text-gray-500 mr-2">(${product.reviews} تقييم)</span>
+                            </div>
+                            <p class="stock-indicator mb-3">
+                                <i class="fas fa-check-circle"></i> متوفر - كمية كبيرة
+                            </p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <span class="text-lg font-bold text-primary currency-price" data-price="${product.price}">${(product.price * currentExchangeRate).toFixed(2)} ${currentCurrencySymbol}</span>
+                                    <span class="text-sm text-gray-500 line-through mr-2">${(product.originalPrice * currentExchangeRate).toFixed(2)} ${currentCurrencySymbol}</span>
+                                </div>
+                                <button onclick="event.stopPropagation(); addToCartVagina('${product.id}', '${product.name}', ${product.price})" class="bg-primary text-white px-3 py-2 rounded-lg hover:bg-purple-700 transition-colors text-sm">
+                                    أضف للسلة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Show Vagina Product Modal
+        function showVaginaProductModal(productId) {
+            const vaginaProducts = [
+                {
+                    id: 'v1',
+                    name: '2 وظيفة 3D واقعية الورك الاصطناعي المهبل فتحة الشرج',
+                    description: 'واقعية 2 وظيفة الورك، 0 سيليكون TPR قابل للغسل، مصنوعة من مادة لوفكلون في نسيج اللحم، في هيكل واقعي، مع وحدة الاهتزاز، مع خاصية العلاقة بين وظيفتين، واقعي تمامًا في ملمس بشرة واقعي، يناسب بسهولة أي حجم القضيب، مقاس الوسط، هيكل سيليكون فائق النعومة، سهل التنظيف، وهي مصنوعة من مواد صديقة للبشرة. طول 24 سم، عرض 24 سم.',
+                    price: 245,
+                    originalPrice: 425,
+                    discount: 42,
+                    images: ['https://pfst.cf2.poecdn.net/base/image/aedf63d37ff32046de7bbba039fb8edf7da60f3458585b936fa9ff7f4c8cdc80?w=768&h=768'],
+                    features: ['وظيفتان واقعيتان', 'سيليكون TPR عالي الجودة', 'ملمس واقعي', 'وحدة اهتزاز', 'سهل التنظيف', 'مواد صديقة للبشرة', 'طول 24 سم × عرض 24 سم'],
+                    rating: 4.7,
+                    reviews: 234
+                }
+                // ... يمكن إضافة باقي المنتجات هنا
+            ];
+            
+            const product = vaginaProducts.find(p => p.id === productId);
+            if (!product) return;
+
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+            modal.innerHTML = `
+                <div class="bg-white dark:bg-gray-800 rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                    <div class="p-6 border-b dark:border-gray-700">
+                        <div class="flex justify-between items-center">
+                            <h2 class="text-2xl font-bold">${product.name}</h2>
+                            <button onclick="this.closest('.fixed').remove()" class="text-gray-500 hover:text-gray-700">
+                                <i class="fas fa-times text-2xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <!-- Images Section -->
+                            <div>
+                                <div class="mb-4">
+                                    <img src="${product.images[0]}" alt="${product.name}" class="w-full rounded-lg shadow-lg">
+                                </div>
+                            </div>
+                            
+                            <!-- Product Info Section -->
+                            <div>
+                                <div class="mb-4">
+                                    <div class="flex items-center mb-2">
+                                        <div class="flex text-yellow-400">
+                                            ${generateStarRating(product.rating)}
+                                        </div>
+                                        <span class="text-sm text-gray-500 mr-2">(${product.reviews} تقييم)</span>
+                                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-bold mr-2">متوفر</span>
+                                    </div>
+                                    <div class="flex items-center space-x-4 space-x-reverse mb-4">
+                                        <span class="text-3xl font-bold text-primary currency-price" data-price="${product.price}">${(product.price * currentExchangeRate).toFixed(2)} ${currentCurrencySymbol}</span>
+                                        <span class="text-xl text-gray-500 line-through">${(product.originalPrice * currentExchangeRate).toFixed(2)} ${currentCurrencySymbol}</span>
+                                        <span class="bg-red-500 text-white px-2 py-1 rounded text-sm font-bold">خصم ${product.discount}%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-6">
+                                    <h3 class="text-lg font-bold mb-3">الوصف:</h3>
+                                    <p class="text-gray-600 dark:text-gray-300">${product.description}</p>
+                                </div>
+
+                                <div class="mb-6">
+                                    <h3 class="text-lg font-bold mb-3">المميزات:</h3>
+                                    <ul class="space-y-2">
+                                        ${product.features.map(feature => `
+                                            <li class="flex items-center">
+                                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                                <span class="text-sm">${feature}</span>
+                                            </li>
+                                        `).join('')}
+                                    </ul>
+                                </div>
+                                
+                                <div class="flex space-x-4 space-x-reverse">
+                                    <button onclick="addToCartVagina('${product.id}', '${product.name}', ${product.price}); this.closest('.fixed').remove();" class="flex-1 bg-primary text-white py-3 rounded-lg hover:bg-purple-700 transition-colors font-bold">
+                                        <i class="fas fa-shopping-cart mr-2"></i>
+                                        أضف للسلة
+                                    </button>
+                                    <button onclick="shareProduct('${product.name}')" class="bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors">
+                                        <i class="fas fa-share-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        // Add to Cart for Vagina Products
+        function addToCartVagina(id, name, price) {
+            const existingItem = cart.find(item => item.id === id);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ id, name, price, quantity: 1 });
+            }
+            
+            updateCartUI();
+            showCartNotification();
         }
 
         // Generate Leather Dildos
